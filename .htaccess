@@ -1,0 +1,13 @@
+#Activation du rexrite des URL
+RewriteEngine On
+
+#base du projet (emplacement a partir de la racine du serveur)
+RewriteBase /ByKate_Stage
+
+#si c'est pas un repertoire
+RewriteCond %{REQUEST_FILENAME} !-d
+
+#si c'est pas un fichier
+RewriteCond %{REQUEST_FILENAME} !-f
+
+RewriteRule ^(.+)$ index.php [QSA,L] 
