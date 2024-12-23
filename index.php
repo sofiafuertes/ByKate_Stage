@@ -16,7 +16,7 @@ switch ($path) {
 
     case $path === "/ByKate_Stage/":
         include './view/header_view.php';
-        include './view/inicio_view.php';
+        include './view/home_view.php';
         include './view/footer_view.php';
         break;  
     }

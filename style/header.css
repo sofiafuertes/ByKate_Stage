@@ -1,0 +1,119 @@
+/* Fonts */
+@font-face {
+    font-family: 'Work-Sans';
+    src: url(../fonts/Work_Sans/WorkSans-Regular.ttf);
+}
+
+@font-face {
+    font-family: 'Nixie-One';
+    src: url(../fonts/Nixie_One/NixieOne-Regular.ttf);
+}
+
+body {
+    padding: 0;
+    margin: 0;
+}
+
+/* Header */
+
+.adminSession {
+    display: none;
+}
+
+header {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: 1 1fr;
+    background-color: #E4DDDF;
+    top: 0;
+    position: sticky;
+    padding: 15px;
+}
+
+nav {
+    grid-column: 2 / 10;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-family: 'Work-Sans';
+}
+
+.logoHeader {
+    display: flex;
+    flex-grow: 3;
+}
+
+.navbar {
+    display: flex;
+    flex-grow: 4;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.navPages {
+    display: flex;
+    flex-grow: 4;
+    justify-content: space-between;
+}
+
+.navPages a {
+    border: 1px solid #67465B;
+    border-radius: 3px;
+    width: 10rem;
+    padding: 7px;
+    text-align: center;
+    background-color: #E4DDDF;
+    text-decoration: none;
+    color: #67465B;
+
+
+}
+
+.navPages a:hover {
+    background-color: #67465B;
+    color: #E4DDDF;
+}
+
+#burgerMenu {
+    display: none;
+}
+
+
+
+
+/* Header responsive */
+@media (max-width: 1600px) {
+    nav {
+        grid-column: 1/-1;
+    }
+}
+
+@media (max-width: 1024px) {
+    body {
+        width: 100vw;
+    }
+
+    header {
+        padding: 5px;
+    }
+
+    nav {
+        grid-column: 1 / -1;
+    }
+
+    .navbar {
+        display: none;
+    }
+
+    #burgerMenu {
+        display: block;
+        font-size: 2em;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        height: 60px;
+        padding: 5px 10px;
+    }
+}
