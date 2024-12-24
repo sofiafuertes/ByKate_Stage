@@ -1,0 +1,19 @@
+
+#automaticSlide {
+    position: relative;
+    bottom: auto;
+    /* width:100vw;  */
+
+}
+.imgSlide{
+    width: 100%;
+    height: 700px;
+}
+
+
+@media screen and (max-width: 768px) {
+    #automaticSlide {
+        height: 100vh;
+    }
+    
+}
