@@ -125,7 +125,8 @@ nav {
         flex-direction: column;
         width: fit-content;
     }
-    .navPages a{
+
+    .navPages a {
         width: 20rem;
         height: 2rem;
         align-content: center;
@@ -141,5 +142,123 @@ nav {
     header {
         height: 60px;
         padding: 5px 10px;
+    }
+}
+
+
+
+/* Footer */
+footer {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: 2fr 1fr;
+    background-color: #E4DDDF;
+    bottom: 0;
+    position: fixed;
+    width: 100%;
+    font-family: 'Work-Sans';
+    color: #67465B;
+
+}
+
+.logoFooter {
+    grid-column: 1 / 2;
+    grid-row: 1 / -1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 7px;
+}
+
+.infoFooter {
+    grid-column: 5 / 9;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.infoFooter p {
+    margin: 5px;
+    text-align: center;
+}
+
+.linksFooter {
+    grid-column: 10 / -1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: end;
+}
+
+.linksFooter a {
+    color: #67465B;
+    text-decoration: none;
+    padding: 5px 7px;
+    text-align: right;
+}
+
+.socialMedia {
+    grid-column: 12 / -1;
+    grid-row: 2;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 5px;
+    align-items: left;
+    font-size: 2em;
+    padding-right: 7px;
+}
+
+.copyRight {
+    grid-column: 5/9;
+    grid-row: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 0.8em;
+}
+
+/* Responive footer */
+
+@media (max-width: 1024px) {
+    footer {
+        grid-template-columns: repeat(6, 1fr);
+        font-size: small;
+    }
+
+    .logoFooter {
+        grid-column: 1 / 2;
+    }
+
+    .infoFooter {
+        grid-column: 2 / 5;
+    }
+
+    .linksFooter {
+        grid-column: 5 / -1;
+    }
+
+    .socialMedia {
+        grid-column: 6 / -1;
+    }
+
+    .copyRight {
+        grid-column: 2 / 5;
+    }
+}
+
+@media (max-width: 768px) {
+    footer {
+        grid-template-columns: 1 1fr;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+    }
+    .linksFooter{
+        align-items: center;
     }
 }

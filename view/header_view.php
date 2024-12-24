@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Café de especialidad, pastelería y brunch">
-    <link rel="stylesheet" href="./style/header.css">
+    <link rel="stylesheet" href="./style/commun.css">
     <script type="module" src="./javascript/header.js" defer></script>
     <script src="https://kit.fontawesome.com/cdc160965e.js" crossorigin="anonymous" ></script>
     <title>ByKate® - Coffee & Cakes -</title>
