@@ -16,10 +16,6 @@ body {
 
 /* Header */
 
-.adminSession {
-    display: none;
-}
-
 header {
     display: grid;
     grid-template-columns: repeat(10, 1fr);
@@ -28,6 +24,7 @@ header {
     top: 0;
     position: sticky;
     padding: 15px;
+    z-index: 10;
 }
 
 nav {
@@ -39,16 +36,18 @@ nav {
 }
 
 .logoHeader {
-    display: flex;
-    flex-grow: 3;
+    /* display: flex; */
+    flex-grow: 1;
 }
 
 .navbar {
     display: flex;
+    flex-direction: row;
     flex-grow: 4;
     justify-content: flex-end;
     align-items: center;
 }
+
 
 .navPages {
     display: flex;
@@ -78,10 +77,17 @@ nav {
     display: none;
 }
 
+.navPages .activePage {
+    background-color: #67465B;
+    color: #E4DDDF;
+}
 
-
+.adminSession {
+    display: none;
+}
 
 /* Header responsive */
+
 @media (max-width: 1600px) {
     nav {
         grid-column: 1/-1;
@@ -97,12 +103,27 @@ nav {
         padding: 5px;
     }
 
-    nav {
-        grid-column: 1 / -1;
-    }
-
     .navbar {
         display: none;
+    }
+
+    .navbar.active {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: #E4DDDF;
+        position: absolute;
+        top: 60px;
+        right: 3px;
+        width: fit-content;
+        z-index: 1;
+        padding-top: 10px;
+    }
+
+    .navPages {
+        flex-direction: column;
+        width: fit-content;
     }
 
     #burgerMenu {
