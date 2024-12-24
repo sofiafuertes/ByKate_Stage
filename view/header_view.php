@@ -7,7 +7,7 @@
     <meta name="description" content="Café de especialidad, pastelería y brunch">
     <link rel="stylesheet" href="./style/header.css">
     <script type="module" src="./javascript/header.js" defer></script>
-    <script src="https://kit.fontawesome.com/cdc160965e.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/cdc160965e.js" crossorigin="anonymous" ></script>
     <title>ByKate® - Coffee & Cakes -</title>
 </head>
 
