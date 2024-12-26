@@ -149,15 +149,24 @@ nav {
 
 
 /* Footer */
+.flowerImg{
+    position: relative;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    margin-bottom: -30px;
+    z-index: 0;
+}
 footer {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     grid-template-rows: 2fr 1fr;
     background-color: #E4DDDF;
+    position: sticky;
     width: 100%;
     font-family: 'Work-Sans';
     color: #67465B;
-    z-index: 2;
+    z-index: 10;
 
 }
 
@@ -250,6 +259,9 @@ footer {
 }
 
 @media (max-width: 768px) {
+    .flowerImg{
+        margin-bottom: -10px;
+    }
     footer {
         grid-template-columns: 1 1fr;
         display: flex;

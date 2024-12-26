@@ -1,3 +1,4 @@
+<img class="flowerImg" src="./photos/flowers_background.svg" alt="Foto flores mural">
 <footer>
     <div class="logoFooter">
         <a href="/ByKate_Stage/"><img src="./photos/logoFooter.png" alt="Logo ByKate Footer" width="150px"></a>
