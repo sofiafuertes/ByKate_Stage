@@ -10,7 +10,7 @@ let imgArray = [
 imgArray.forEach((slide) => {
     let div = document.createElement("div");
     let img = document.createElement("img");
-    
+
     img.src = slide;
     img.classList.add("imgSlide");
 
@@ -25,14 +25,14 @@ let transitionDelay = 3000;
 let slides = imgContainer.querySelectorAll(".imgSlide");
 
 for (let slide of slides) {
-    slide.style.transition = 'all ${transitionDelay/1000}s linear';
+    slide.style.transition = "all ${transitionDelay/1000}s linear";
 }
 
 showSlide(index);
 
 function showSlide(numberSlide) {
     slides.forEach((slide, i) => {
-        slide.style.display = i === numberSlide ? 'block' : 'none';
+        slide.style.display = i === numberSlide ? "block" : "none";
     });
     index++;
     if (index >= slides.length) {

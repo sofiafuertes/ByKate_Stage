@@ -1,19 +1,121 @@
-
 #automaticSlide {
     position: relative;
-    bottom: auto;
-    /* width:100vw;  */
+    top: auto;
 
 }
-.imgSlide{
+
+.imgSlide {
     width: 100%;
-    height: 700px;
+    height: 800px;
 }
 
+.productsSection {
+    background-color: #e4dddfb3;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: 1fr 4fr 1fr;
+    width: 100%;
+    margin-top: 50px;
 
-@media screen and (max-width: 768px) {
-    #automaticSlide {
-        height: 100vh;
+}
+
+.productsSection h1 {
+    grid-column: 1 / -1;
+    grid-row: 1;
+    align-self: center;
+    text-align: center;
+    color: #67465B;
+    font-family: 'Work-Sans';
+}
+
+.productsContainer {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    justify-content: space-evenly;
+    display: flex;
+    flex-direction: row;
+}
+
+.imgProduct img {
+    height: 350px;
+    width: 300px;
+    border-radius: 3px;
+    filter: drop-shadow(1px 4px 2px #B58086);
+    object-fit: cover;
+}
+
+.buttonProduct {
+    display: grid;
+    grid-column: 1 / -1;
+    grid-row: 3;
+
+    button {
+        justify-self: center;
+        align-self: center;
+        border: 1px solid #B58086;
+        border-radius: 3px;
+        width: 12rem;
+        padding: 7px;
+        font-size: 1em;
+        background-color: #67465B;
+        font-family: 'Work-Sans';
     }
-    
+
+    a {
+        text-decoration: none;
+        color: #E4DDDF;
+
+    }
+}
+
+button:hover {
+    background-color: #E4DDDF;
+
+    a {
+        color: #67465B;
+    }
+}
+
+@media (max-width: 1300px) {
+    .imgSlide {
+        height: 600px;
+    }
+
+    .productsSection {
+        grid-template-rows: 1fr 4fr 1fr;
+    }
+
+    .productsContainer {
+        grid-row: 2;
+        flex-wrap: wrap;
+        gap: 5px;
+    }
+
+    .buttonProduct {
+        grid-row: 3;
+    }
+}
+@media (max-width: 768px) {
+    .imgSlide {
+        height: 300px;
+    }
+
+    .productsSection {
+        grid-template-rows: 0.5fr 4fr 4fr 0.5fr;
+    }
+
+    .productsSection h1 {
+        font-size: 1.5em;
+        margin: 5px
+    }
+
+    .productsContainer {
+        grid-row: 2/4;
+        flex-wrap: wrap;
+        gap: 5px;
+    }
+
+    .buttonProduct {
+        grid-row: 4;
+    }
 }
