@@ -1,3 +1,4 @@
+/* Slide */
 #automaticSlide {
     position: relative;
     top: auto;
@@ -9,6 +10,12 @@
     height: 800px;
 }
 
+
+
+
+
+
+/* Products Section */
 .productsSection {
     background-color: #e4dddfb3;
     display: grid;
@@ -42,9 +49,10 @@
     border-radius: 3px;
     filter: drop-shadow(1px 4px 2px #B58086);
     object-fit: cover;
+    object-position: center;
 }
 
-.buttonProduct {
+.button{
     display: grid;
     grid-column: 1 / -1;
     grid-row: 3;
@@ -76,11 +84,83 @@ button:hover {
     }
 }
 
+
+
+
+
+
+/* About Us Section */
+
+.aboutUsSection {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: 1fr;
+    width: 100%;
+    margin-top: 50px;
+}
+
+.aboutUsContainer {
+    grid-column: 2/8;
+    display: flex;
+    background-color: #e4dddfb3;
+    padding: 20px;
+    align-items: center;
+}
+
+.titleTextFlex {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+}
+
+.aboutUsContainer h1 {
+    text-align: left;
+    color: #67465B;
+    font-family: 'Work-Sans';
+    margin: 0 ;
+}
+
+.aboutUsText {
+    font-family: 'Work-Sans';
+    text-align: left;
+    justify-content: center;
+    padding-right: 10px;
+}
+
+.aboutUsImg img {
+    align-self: center;
+    height: 350px;
+    width: 300px;
+    border-radius: 3px;
+    filter: drop-shadow(1px 4px 2px #B58086);
+    object-fit: cover;
+    object-position: center;
+    ;
+}
+
+.aboutUsSection button{
+    justify-self: left;
+}
+
+
+
+
+
+
+
+
+
+
+/* Responsiveness */
 @media (max-width: 1300px) {
+
+    /* Slide */
     .imgSlide {
         height: 600px;
     }
 
+    /* Products */
     .productsSection {
         grid-template-rows: 1fr 4fr 1fr;
     }
@@ -91,13 +171,22 @@ button:hover {
         gap: 5px;
     }
 
-    .buttonProduct {
+    .button {
         grid-row: 3;
     }
 }
+
 @media (max-width: 768px) {
+
+    /* Slide */
     .imgSlide {
-        height: 300px;
+        height: 250px;
+    }
+
+    /* Products */
+    .imgProduct img {
+        width: 300px;
+        height: 400px;
     }
 
     .productsSection {
@@ -115,7 +204,7 @@ button:hover {
         gap: 5px;
     }
 
-    .buttonProduct {
+    .button {
         grid-row: 4;
     }
 }
