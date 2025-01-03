@@ -1,0 +1,23 @@
+{
+    "name": "sofiafuertes/by-kate_stage",
+    "autoload": {
+        "psr-4": {
+            "Sofiafuertes\\ByKateStage\\": "src/entity"
+        }
+    },
+    "authors": [
+        {
+            "name": "sofiafuertes",
+            "email": "sofia_fuertes@hotmail.com"
+        }
+    ],
+    "require": {
+        "doctrine/orm": "^3.3",
+        "doctrine/dbal": "^4.2"
+    },
+    "config": {
+        "platform": {
+            "php": "8.3.9"
+        }
+    }
+}

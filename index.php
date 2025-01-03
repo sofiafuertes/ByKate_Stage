@@ -1,7 +1,13 @@
 <?php
 //* J'active la session
 session_start();
-//* Inlclure ressources communes a chaque route
+
+
+require_once __DIR__ . '/bootstrap.php';
+
+$entityManager = require_once __DIR__ . '/bootstrap.php';
+
+//* Inclure ressources communes a chaque route
 include './view/header_view.php';
 
 
