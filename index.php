@@ -3,6 +3,10 @@
 session_start();
 //* Inlclure ressources communes a chaque route
 include './view/header_view.php';
+include 'env.php';
+include './config/database.php';
+$db = new Database();
+$pdo = $db->connect();
 
 
 //Analyse de l'URL avec parse_url() et retourne ses composants
@@ -25,6 +29,10 @@ switch ($path) {
         break;
 
     case $path === "/ByKate_Stage/nuestromenu":
+        include './model/product.php';
+        include './manager/product.php';
+        include './controler/products.php';
+        $products = new ProductsControler();
         include './view/menu_view.php';
         break;
 
@@ -38,6 +46,17 @@ switch ($path) {
 
     case $path === "/ByKate_Stage/gestion":
         include './view/adminhome_view.php';
+        break;
+
+    case $path === "/ByKate_Stage/conexion":
+        include 'env.php';
+        include './utils/functions.php';
+        include './view/connexionAdmin_view.php';
+        include './model/users.php';
+        include './manager/managerUsers.php';
+        include './controler/login_controler.php';
+        $connexion = new Login_controler();
+        $connexion->connexionUser();
         break;
 
 }

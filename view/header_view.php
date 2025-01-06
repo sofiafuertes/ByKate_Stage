@@ -7,6 +7,7 @@
     <meta name="description" content="Café de especialidad, pastelería y brunch">
     <link rel="stylesheet" href="./style/commun.css">
     <link rel="stylesheet" href="./style/home.css">
+    <link rel="stylesheet" href="./style/login.css">
     <script src="./javascript/header.js" defer></script>
     <script src="./javascript/slide.js" defer></script>
     <script src="https://kit.fontawesome.com/cdc160965e.js" crossorigin="anonymous" ></script>
