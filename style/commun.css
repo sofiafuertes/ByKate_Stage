@@ -1,7 +1,7 @@
 /* Fonts */
 @font-face {
     font-family: 'Work-Sans';
-    src: url(../fonts/Work_Sans/WorkSans-Regular.ttf);
+    src: url(../fonts/Work_Sans/WorkSans-VariableFont_wght.ttf);
 }
 
 @font-face {
@@ -145,7 +145,6 @@ nav {
         padding: 5px 10px;
     }
 }
-
 
 
 /* Footer */

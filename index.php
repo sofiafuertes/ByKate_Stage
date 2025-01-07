@@ -29,11 +29,11 @@ switch ($path) {
         break;
 
     case $path === "/ByKate_Stage/nuestromenu":
-        include './model/product.php';
-        include './manager/product.php';
-        include './controler/products.php';
-        $products = new ProductsControler();
-        include './view/menu_view.php';
+        include './model/product_model.php';
+        include './manager/product_manager.php';
+        include './controller/products_controller.php';
+        $controller = new ProductsControler();
+        $controller->displayProducts();
         break;
 
     case $path === "/ByKate_Stage/recetas":
@@ -54,7 +54,7 @@ switch ($path) {
         include './view/connexionAdmin_view.php';
         include './model/users.php';
         include './manager/managerUsers.php';
-        include './controler/login_controler.php';
+        include './controller/login_controler.php';
         $connexion = new Login_controler();
         $connexion->connexionUser();
         break;

@@ -18,7 +18,7 @@
                 <img src="./photos/products/pavlovaddl.jpg" alt="Foto Pavlovla de dulce de leche">
             </div>
         </div>
-        <div class="button">
+        <div class="divButton">
             <button><a href="/ByKate_Stage/nuestromenu">Todos los productos</a></button>
         </div>
     </div>
@@ -48,7 +48,7 @@
                         ut? Temporibus quae, eos veniam illo expedita illum. Lorem ipsum dolor sit amet consectetur
                         adipisicing elit. Quam, maxime.</p>
                 </div>
-                <div class="button">
+                <div class="divButton">
             <button><a href="/ByKate_Stage/quienessomos">Continuar leyendo</a></button>
         </div>
             </div>

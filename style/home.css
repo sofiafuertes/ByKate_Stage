@@ -52,7 +52,7 @@
     object-position: center;
 }
 
-.button{
+.divButton {
     display: grid;
     grid-column: 1 / -1;
     grid-row: 3;
@@ -76,8 +76,8 @@
     }
 }
 
-button:hover {
-    background-color: #E4DDDF;
+.divButton button:hover {
+    background-color: #e4dddfb3;
 
     a {
         color: #67465B;
@@ -118,7 +118,7 @@ button:hover {
     text-align: left;
     color: #67465B;
     font-family: 'Work-Sans';
-    margin: 0 ;
+    margin: 0;
 }
 
 .aboutUsText {
@@ -136,10 +136,9 @@ button:hover {
     filter: drop-shadow(1px 4px 2px #B58086);
     object-fit: cover;
     object-position: center;
-    ;
 }
 
-.aboutUsSection button{
+.aboutUsSection button {
     justify-self: left;
 }
 
@@ -171,9 +170,10 @@ button:hover {
         gap: 5px;
     }
 
-    .button {
+    .divButton {
         grid-row: 3;
     }
+    
 }
 
 @media (max-width: 768px) {
@@ -204,7 +204,29 @@ button:hover {
         gap: 5px;
     }
 
-    .button {
+    .divButton {
         grid-row: 4;
+    }
+
+    .aboutUsSection {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .aboutUsContainer {
+        grid-column: 1/ -1;
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+        align-items: center;
+    }
+
+    .aboutUsImg img{
+        margin-top: 15px;
+        grid-column: 1/ -1;
+    }
+
+    .aboutUsSection button {
+        justify-self: left;
     }
 }
