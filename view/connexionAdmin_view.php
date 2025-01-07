@@ -1,7 +1,7 @@
 <main>
     <div class="container">
     <h1>CONEXIÓN</h1>
-    <form action="" method="POST">
+    <form class="formConnexion" action="" method="POST">
         <input type="mail" name="login" class="login"
             maxlength="30" placeholder="Mail" autofocus required>
         <input type="password" name="password" class="password" placeholder="Password" required>

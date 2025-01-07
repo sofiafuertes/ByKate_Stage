@@ -12,7 +12,7 @@
     font-family: 'Work-Sans';
     color: #67465B;
 }
-form{
+.formConnexion{
     grid-column: 3/7;
     grid-row: 2/-1;
     display: flex;
@@ -45,7 +45,7 @@ form{
         background-color: #E4DDDF;
         color: #67465B;
     }
-form a{
+.formConnexion a{
     color: #67465B;
 }
 .forgotpwd a{

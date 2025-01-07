@@ -101,33 +101,36 @@
 
 .aboutUsContainer {
     grid-column: 2/8;
+    /* display: grid; */
     display: flex;
+    flex-direction: row;
+    /* flex-wrap: wrap; */
     background-color: #e4dddfb3;
     padding: 20px;
     align-items: center;
 }
 
 .titleTextFlex {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-
+    align-self: flex-start;
 }
 
-.aboutUsContainer h1 {
+.titleTextFlex h1 {
     text-align: left;
     color: #67465B;
     font-family: 'Work-Sans';
     margin: 0;
 }
 
-.aboutUsText {
+.aboutUsText {    
     font-family: 'Work-Sans';
-    text-align: left;
-    justify-content: center;
     padding-right: 10px;
 }
 
+.aboutUsImg{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .aboutUsImg img {
     align-self: center;
     height: 350px;
@@ -139,7 +142,8 @@
 }
 
 .aboutUsSection button {
-    justify-self: left;
+    grid-row: 2;
+    justify-self: flex-start;
 }
 
 

@@ -2,7 +2,7 @@
     <div id="automaticSlide">
     </div>
 
-    <div class="productsSection">
+    <section class="productsSection">
         <h1>Nuestros Productos</h1>
         <div class="productsContainer">
             <div class="imgProduct">
@@ -21,12 +21,14 @@
         <div class="divButton">
             <button><a href="/ByKate_Stage/nuestromenu">Todos los productos</a></button>
         </div>
-    </div>
+    </section>
 
-    <div class="aboutUsSection">
+    <section class="aboutUsSection">
         <div class="aboutUsContainer">
-            <div class="titleTextFlex">
-                <h1>Nuestra Historia</h1>
+            <div class="aboutUsRight">
+                <div class="titleTextFlex">
+                    <h1>Nuestra Historia</h1>
+                </div>
                 <div class="aboutUsText">
                     <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corporis, est. Lorem ipsum dolor sit
                         amet
@@ -49,12 +51,13 @@
                         adipisicing elit. Quam, maxime.</p>
                 </div>
                 <div class="divButton">
-            <button><a href="/ByKate_Stage/quienessomos">Continuar leyendo</a></button>
-        </div>
+                    <button><a href="/ByKate_Stage/quienessomos">Continuar leyendo</a></button>
+                </div>
             </div>
             <div class="aboutUsImg">
                 <img src="./photos/aboutUsHome.jpg" alt="Foto de la pastelería">
             </div>
-            
         </div>
+
+    </section>
 </main>

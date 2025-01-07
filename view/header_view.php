@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="./style/menu.css">
     <script src="./javascript/header.js" defer></script>
     <script src="./javascript/slide.js" defer></script>
+    <script src="./javascript/search.js" defer></script>
     <script src="https://kit.fontawesome.com/cdc160965e.js" crossorigin="anonymous" ></script>
     <title>ByKate® - Coffee & Cakes -</title>
 </head>
