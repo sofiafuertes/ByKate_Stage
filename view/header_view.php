@@ -6,13 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Café de especialidad, pastelería y brunch">
     <base href="/ByKate_Stage/">
-    <link rel="stylesheet" href="/ByKate_Stage/style/commun.css">
-    <link rel="stylesheet" href="/ByKate_Stage/style/home.css">
-    <link rel="stylesheet" href="/ByKate_Stage/style/login.css">
-    <link rel="stylesheet" href="/ByKate_Stage/style/menu.css">
-    <script src="/ByKate_Stage/javascript/header.js" defer></script>
-    <script src="/ByKate_Stage/javascript/slide.js" defer></script>
-    <script src="/ByKate_Stage/javascript/search.js" defer></script>
+    <link rel="stylesheet" href="style/commun.css">
+    <link rel="stylesheet" href="style/home.css">
+    <link rel="stylesheet" href="style/login.css">
+    <link rel="stylesheet" href="style/menu.css">
+    <link rel="stylesheet" href="style/contact.css">
+    <script src="javascript/header.js" defer></script>
+    <script src="javascript/slide.js" defer></script>
+    <script src="javascript/search.js" defer></script>
+    <script src="javascript/form.js" defer></script>
     <script src="https://kit.fontawesome.com/cdc160965e.js" crossorigin="anonymous" ></script>
     <title>ByKate® - Coffee & Cakes -</title>
 </head>

@@ -1,0 +1,81 @@
+/* Contact Form */
+.contactPage .textPage{
+    margin: 16px 5px;
+
+}
+.contactPage .titlePage{
+    justify-self: center;
+}
+
+.containerContactForm{
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+#contactForm{
+    background-color:#e4dddfb3 ;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    font: 1.1rem 'Work-Sans' ;
+    color: #67465B;
+    padding: 20px;
+    border-radius: 3px;
+}
+/* .contactForm label{
+    margin-bottom: 5px;
+} */
+#contactForm input, select, textarea{
+    font: 1.1rem 'Work-Sans' ;
+    color: #67465B;
+    margin: 5px 0;
+}
+#contactForm .button{
+    justify-self: flex-end;
+    font-size: 1.1rem;
+    color: #e4dddf;
+}
+
+
+/* Social media Contact Page */
+.containerSocialMedia{
+    display: flex;
+    justify-content:center;
+}
+.socialMediaContact{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    gap: 15px;
+    /* margin: 0 auto; */
+}
+
+.socialMediaContact p{
+    margin: 20px 0 10px -20px;
+    font: 1.2rem 'Work-Sans';
+    color: #67465B;
+}
+.socialMediaContact a{
+    font: 1.2rem 'Work-Sans';
+    color: #67465B;
+}
+.iconSocialMedia{
+    margin-right: 10px;
+    font-size: 2rem;
+}
+
+@media (max-width: 1024px) {
+
+}
+
+@media (max-width: 768px) {
+    #contactForm{
+        width: 80%;
+    }
+    #contactForm .button{
+        justify-self: center;
+    }
+    .socialMediaContact{
+        width: 80%;
+    }
+}

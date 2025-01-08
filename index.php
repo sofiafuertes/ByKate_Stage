@@ -59,6 +59,7 @@ switch ($path) {
 
     case $path === "/ByKate_Stage/contacto":
         include './view/contact_view.php';
+        include './config/send_email.php';
         break;
 
     case $path === "/ByKate_Stage/gestion":
