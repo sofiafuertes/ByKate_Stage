@@ -5,13 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Café de especialidad, pastelería y brunch">
-    <link rel="stylesheet" href="./style/commun.css">
-    <link rel="stylesheet" href="./style/home.css">
-    <link rel="stylesheet" href="./style/login.css">
-    <link rel="stylesheet" href="./style/menu.css">
-    <script src="./javascript/header.js" defer></script>
-    <script src="./javascript/slide.js" defer></script>
-    <script src="./javascript/search.js" defer></script>
+    <base href="/ByKate_Stage/">
+    <link rel="stylesheet" href="/ByKate_Stage/style/commun.css">
+    <link rel="stylesheet" href="/ByKate_Stage/style/home.css">
+    <link rel="stylesheet" href="/ByKate_Stage/style/login.css">
+    <link rel="stylesheet" href="/ByKate_Stage/style/menu.css">
+    <script src="/ByKate_Stage/javascript/header.js" defer></script>
+    <script src="/ByKate_Stage/javascript/slide.js" defer></script>
+    <script src="/ByKate_Stage/javascript/search.js" defer></script>
     <script src="https://kit.fontawesome.com/cdc160965e.js" crossorigin="anonymous" ></script>
     <title>ByKate® - Coffee & Cakes -</title>
 </head>
@@ -20,7 +21,7 @@
         <header>
             <nav>
                 <div class="logoHeader">
-                    <a href="/ByKate_Stage/"><img src="./photos/logoHeader.png" alt="Logo ByKate®" width="200px"></a>
+                    <a href="/ByKate_Stage/"><img src="/ByKate_Stage/photos/logoHeader.png" alt="Logo ByKate®" width="200px"></a>
                 </div>
                 <div class="navbar">
                     <div class="navPages">

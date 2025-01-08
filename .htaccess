@@ -4,6 +4,8 @@ RewriteEngine On
 #base du projet (emplacement a partir de la racine du serveur)
 RewriteBase /ByKate_Stage
 
+RewriteRule ^producto/([0-9]+)$ /ByKate_Stage/index.php?path=/ByKate_Stage/producto/$1 [QSA,L]
+
 #si c'est pas un repertoire
 RewriteCond %{REQUEST_FILENAME} !-d
 

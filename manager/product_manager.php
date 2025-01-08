@@ -12,7 +12,7 @@ class ProductManager
     public function readAllProducts(): array
     {
         try {
-            $query = $this->db->prepare('SELECT product_name, product_description, allergies, servings, photo_principal_path FROM product');
+            $query = $this->db->prepare('SELECT id_product, product_name, product_description, allergies, servings, photo_principal_path FROM product');
             $query->execute();
             $products = $query->fetchAll(PDO::FETCH_ASSOC);
             return $products ?: [];
@@ -21,16 +21,23 @@ class ProductManager
             return [];
         }
     }
+
+
+
+    public function readProductById(int $id): ?array
+    {
+        try {
+            $query = $this->db->prepare('SELECT id_product, product_name, product_description, allergies, servings, photo_principal_path, photo1_path, photo2_path, photo3_path FROM product WHERE id_product = :id');
+            $query->bindValue(':id', $id, PDO::PARAM_INT);
+            $query->execute();
+            $product = $query->fetch(PDO::FETCH_ASSOC);
+            return $product ?: null;
+        } catch (PDOException $e) {
+            error_log('Error en la consulta: ' . $e->getMessage());
+            return null;
+        }
+    }
 }
-
-
-// public function readProductById(int $id): array{
-//     $pdo = $this->db->connect();
-//     $query = $pdo->prepare('SELECT * FROM products WHERE id_product = :id');
-//     $query->execute(['id' => $id]);
-//     $product = $query->fetch(PDO::FETCH_ASSOC);
-//     return $product;
-// }
 
 // public function createProduct(Product $product): void{
 //     $pdo = $this->db->connect();

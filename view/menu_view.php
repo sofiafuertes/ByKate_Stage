@@ -1,11 +1,11 @@
 <main>
     <div class="containerText">
         <h1 class="titlePage">NUESTRO MENÚ</h1>
-        <p class="textProduct">En esta página encontrarás los pasteles, tartas y diferentes productos que puedes pedir
+        <p class="textPage">En esta página encontrarás los pasteles, tartas y diferentes productos que puedes pedir
             por encargo.
             Si quieres algún pastel personalizado o hacer un pedido especial para un evento, no dudes en contactarnos
             (vía teléfono, email o rellenando el formulario de contacto)</p>
-        <p class="textProduct">Para ver el menú que encontrarás en nuestra tienda, click <a
+        <p class="textPage">Para ver el menú que encontrarás en nuestra tienda, click <a
                 href="https://drive.google.com/file/d/1RjpJ7kokre2Qq0veHm6EvYbCwXEs0hc-/view?usp=sharing"
                 target="_blank"> acá</a></p>
         <form class="searchField">
@@ -29,6 +29,7 @@
             <?php else: ?>
                 <?php foreach ($products as $product): ?>
                     <div class="product" data-name="<?= htmlspecialchars($product['product_name']) ?>">
+                    <a href="/ByKate_Stage/producto/<?= htmlspecialchars($product['id_product']) ?>">
                         <img src="<?= htmlspecialchars($product['photo_principal_path']) ?>"
                             alt="<?= htmlspecialchars($product['product_name']) ?>">
                         <h3><?= htmlspecialchars($product['product_name']) ?></h3>

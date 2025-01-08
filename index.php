@@ -18,6 +18,19 @@ $path = isset($url['path']) ? $url['path'] : '/';
 /*--------------------------ROUTER -----------------------------*/
 
 //test de la valeur $path dans l'URL et import de la ressource
+if (preg_match('/^\/ByKate_Stage\/producto\/(\d+)$/', $path, $matches)) {
+    // If the path corresponds to /ByKate_Stage/product/{id}
+    $id_product = $matches[1]; // Capture the product ID from the URL
+    include './model/product_model.php'; // Include the product model
+    include './manager/product_manager.php'; // Include the product manager
+    include './controller/products_controller.php'; // Include the products controller
+    $controller = new ProductsControler(); // Create a new instance of the controller
+    $controller->displayProduct($id_product); // Call the method to display the product details
+    include './view/footer_view.php';
+    exit; // Stop further script execution, as the product page is already loaded
+}
+
+
 switch ($path) {
 
     case $path === "/ByKate_Stage/":
@@ -35,6 +48,10 @@ switch ($path) {
         $controller = new ProductsControler();
         $controller->displayProducts();
         break;
+
+        
+
+
 
     case $path === "/ByKate_Stage/recetas":
         include './view/recipes_view.php';

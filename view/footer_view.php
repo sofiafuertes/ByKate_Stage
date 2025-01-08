@@ -1,7 +1,7 @@
-<img class="flowerImg" src="./photos/flowers_background.svg" alt="Foto flores mural">
+<img class="flowerImg" src="/ByKate_Stage/photos/flowers_background.svg" alt="Foto flores mural">
 <footer>
     <div class="logoFooter">
-        <a href="/ByKate_Stage/"><img src="./photos/logoFooter.png" alt="Logo ByKate Footer" width="150px"></a>
+        <a href="/ByKate_Stage/"><img src="/ByKate_Stage/photos/logoFooter.png" alt="Logo ByKate Footer" width="150px"></a>
     </div>
 
     <div class="infoFooter">
