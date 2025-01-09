@@ -2,6 +2,9 @@
 //* J'active la session
 session_start();
 //* Inlclure ressources communes a chaque route
+include './model/header_model.php';
+$header = new Header();
+$header->displayNav();
 include './view/header_view.php';
 include 'env.php';
 include './config/database.php';
@@ -49,10 +52,6 @@ switch ($path) {
         $controller->displayProducts();
         break;
 
-        
-
-
-
     case $path === "/ByKate_Stage/recetas":
         include './view/recipes_view.php';
         break;
@@ -69,13 +68,20 @@ switch ($path) {
     case $path === "/ByKate_Stage/conexion":
         include 'env.php';
         include './utils/functions.php';
-        include './view/connexionAdmin_view.php';
-        include './model/users.php';
-        include './manager/managerUsers.php';
+        include './model/users_model.php';
+        include './manager/users_manager.php';
         include './controller/login_controler.php';
         $connexion = new Login_controler();
         $connexion->connexionUser();
+        include './view/connexionAdmin_view.php';
         break;
+
+    case $path === "/ByKate_Stage/logout":
+        include './controller/logout.php';
+        $logout = new Logout;
+        $logout->logoutSession();
+        break;
+
 
 }
 

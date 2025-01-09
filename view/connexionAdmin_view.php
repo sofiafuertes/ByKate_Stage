@@ -8,6 +8,7 @@
         <div class="forgotpwd">
             <a href="#">Contraseña olvidada?</a>
         </div>
+        <p><?php echo $connexion->getMessage()?></p>
         <div class="divButton">
             <input class="button" type="submit" name="connexionSubmit" value="CONEXIÓN">
         </div>

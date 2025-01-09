@@ -12,7 +12,7 @@
             lunes a viernes.</p>
     </div>
     <section class="containerContactForm">
-        <form id="contactForm" action="" method="POST">
+        <form id="contactForm" action="/ByKate_Stage/config/send_email.php" method="POST">
             <label for="name">Nombre Completo *</label>
             <input type="text" id="nameForm" name="name" placeholder="Nombre Apellido" autofocus required>
             <label for="email">Correo Electrónico *</label>

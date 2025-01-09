@@ -31,7 +31,9 @@
                         <a href="/ByKate_Stage/nuestromenu">NUESTRO MENÚ</a>
                         <a href="/ByKate_Stage/recetas">RECETAS</a>
                         <a href="/ByKate_Stage/contacto">CONTACTO</a>
-                        <a class="adminSession" href="/ByKate_Stage/gestion">GESTIÓN</a>
+                        <a class="<?php echo $header->getclassConnexion() ?>" href="/ByKate_Stage/gestion">GESTIÓN</a>
+                        <a class="<?php echo $header->getclassConnexion() ?>" href="/ByKate_Stage/logout">DESCONEXIÓN</a>
+
                     </div>
                 </div>
                 <div id="burgerMenu"><i class="fa-solid fa-bars" style="color: #67465B;" id="hamburgerMenu"></i></div>

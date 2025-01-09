@@ -1,7 +1,7 @@
 <?php 
 
 class Logout{
-    public function deco(){
+    public function logoutSession(){
         
         //Je détruis la session
         session_destroy();
