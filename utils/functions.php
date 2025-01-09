@@ -4,6 +4,6 @@
  * @param mixed $data
  * @return string
  */
-function sanitize($data):string{
+function sanitize($data){
     return htmlentities(strip_tags(stripslashes(trim($data))));
 };

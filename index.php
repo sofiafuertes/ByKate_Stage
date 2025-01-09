@@ -62,6 +62,12 @@ switch ($path) {
         break;
 
     case $path === "/ByKate_Stage/gestion":
+        include './utils/functions.php';
+        include './model/product_model.php';
+        include './manager/product_manager.php';
+        include './controller/products_controller.php';
+        $addingProduct = new ProductsControler();
+        $addingProduct->addProduct();
         include './view/adminhome_view.php';
         break;
 

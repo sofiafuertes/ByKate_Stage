@@ -37,6 +37,39 @@ class ProductManager
             return null;
         }
     }
+    public function addProduct(Product $product)
+    {
+        $name = $product->getName_product();
+        $description = $product->getDescription_product();
+        $allergies = $product->getAllergies();
+        $servings = $product->getServings();
+        // $photoPrincipal = $product->getPhotoPrincipal();
+
+        var_dump($name, $description, $allergies, $servings);
+        // $photo1 = $product->getPhoto1();
+        // $photo2 = $product->getPhoto2();
+        // $photo3 = $product->getPhoto3();
+
+        try {
+            $query = $this->db->prepare('INSERT INTO product (product_name, product_description, allergies, servings) VALUES (?, ?, ?, ?)');
+
+            $query->bindParam(1, $name, PDO::PARAM_STR);
+            $query->bindParam(2, $description, PDO::PARAM_STR);
+            $query->bindParam(3, $allergies, PDO::PARAM_STR);
+            $query->bindParam(4, $servings, PDO::PARAM_STR); 
+            // $query->bindParam(5, $photoPrincipal, PDO::PARAM_STR);
+            // $query->bindParam(6, $photo1, PDO::PARAM_STR);
+            // $query->bindParam(7, $photo2, PDO::PARAM_STR);
+            // $query->bindParam(8, $photo3, PDO::PARAM_STR);
+            $result = $query->execute();
+            var_dump($result); 
+            return "Producto agregado con éxito";
+        } catch (PDOException $e) {
+            error_log('Error al agregar producto: ' . $e->getMessage());
+            return "Error al agregar producto:". $e->getMessage();
+        }
+    }
+
 }
 
 // public function createProduct(Product $product): void{
