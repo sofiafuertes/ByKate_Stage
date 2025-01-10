@@ -1,39 +1,32 @@
-document.getElementById('contactForm').addEventListener('submit', function(event) {
-    event.preventDefault();  // Prevenir que el formulario se envíe de forma tradicional
+document.getElementById('contactForm').addEventListener('submit', async function(event) {
+    event.preventDefault(); // Evitar el envío estándar del formulario
 
-    var formData = new FormData(this);
+    const form = event.target;
+    const formData = new FormData(form);
 
-    // Enviar formulario usando AJAX
-    var xhr = new XMLHttpRequest();
-    xhr.open('POST', this.action, true);
-    
-    xhr.onload = function() {
-        if (xhr.status === 200) {  // Verifica que la respuesta del servidor sea exitosa
-            var response = JSON.parse(xhr.responseText);  // Convertir la respuesta JSON a objeto
+    try {
+        const response = await fetch(form.action, {
+            method: 'POST',
+            body: formData,
+        });
 
-            var responseMessage = document.getElementById('responseMessage');
-            if (response.success) {
-                // Mostrar mensaje de éxito y vaciar el formulario
-                responseMessage.style.color = 'green';
-                responseMessage.style.display = 'block';
-                responseMessage.textContent = response.success;
-                document.getElementById('contactForm').reset(); // Vaciar el formulario
-            } else if (response.error) {
-                // Mostrar mensaje de error
-                responseMessage.style.color = 'red';
-                responseMessage.style.display = 'block';
-                responseMessage.textContent = response.error;
-            }
+        const result = await response.json();
+
+        const responseMessage = document.getElementById('responseMessage');
+        responseMessage.style.display = 'block';
+
+        if (result.success) {
+            responseMessage.textContent = result.success;
+            responseMessage.style.color = 'green';
+            alert('Mensaje enviado con éxito, nos podremos en contacto contigo lo antes posible!');
+
+            form.reset(); // Limpiar el formulario
         } else {
-            console.error('Error en la solicitud AJAX:', xhr.status, xhr.statusText);
+            responseMessage.textContent = result.error || 'Error desconocido.';
+            responseMessage.style.color = 'red';
         }
-    };
-
-    // Manejar errores de la solicitud
-    xhr.onerror = function() {
-        console.error('Error en la solicitud AJAX');
-    };
-
-    // Enviar los datos del formulario
-    xhr.send(formData);
+    } catch (error) {
+        console.error('Error al enviar el formulario:', error);
+        alert('Hubo un problema al enviar el formulario. Inténtalo más tarde.');
+    }
 });

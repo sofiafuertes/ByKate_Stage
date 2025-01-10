@@ -30,8 +30,8 @@
             <div class="divButton">
                 <input class="button" type="submit" name="messageSend" value="Enviar">
             </div>
+            <div id="responseMessage" style="display:none;"></div>
         </form>
-        <div id="responseMessage" style="display:none;"></div>
     </section>
     <section class="containerSocialMedia">
         <div class="socialMediaContact">

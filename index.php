@@ -58,8 +58,8 @@ switch ($path) {
         break;
 
     case $path === "/ByKate_Stage/contacto":
-        include './view/contact_view.php';
         include './config/send_email.php';
+        include './view/contact_view.php';
         break;
 
     case $path === "/ByKate_Stage/gestion":
