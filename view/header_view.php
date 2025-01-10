@@ -8,13 +8,14 @@
     <base href="/ByKate_Stage/">
     <link rel="stylesheet" href="style/commun.css">
     <link rel="stylesheet" href="style/home.css">
-    <link rel="stylesheet" href="style/login.css">
+    <link rel="stylesheet" href="style/adminPages.css">
     <link rel="stylesheet" href="style/menu.css">
     <link rel="stylesheet" href="style/contact.css">
     <script src="javascript/header.js" defer></script>
     <script src="javascript/slide.js" defer></script>
     <script src="javascript/search.js" defer></script>
     <script src="javascript/form.js" defer></script>
+    <script src="javascript/adminPage.js" defer></script>
     <script src="https://kit.fontawesome.com/cdc160965e.js" crossorigin="anonymous" ></script>
     <title>ByKate® - Coffee & Cakes -</title>
 </head>

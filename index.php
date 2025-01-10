@@ -49,7 +49,8 @@ switch ($path) {
         include './manager/product_manager.php';
         include './controller/products_controller.php';
         $controller = new ProductsControler();
-        $controller->displayProducts();
+        $products= $controller->displayProducts();
+        include './view/menu_view.php';
         break;
 
     case $path === "/ByKate_Stage/recetas":
@@ -68,6 +69,8 @@ switch ($path) {
         include './controller/products_controller.php';
         $addingProduct = new ProductsControler();
         $addingProduct->addProduct();
+        $controller = new ProductsControler();
+        $products= $controller->displayProducts();
         include './view/adminhome_view.php';
         break;
 
