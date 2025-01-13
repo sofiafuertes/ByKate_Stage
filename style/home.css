@@ -20,7 +20,7 @@
     background-color: #e4dddfb3;
     display: grid;
     grid-template-columns: repeat(8, 1fr);
-    grid-template-rows: 1fr 4fr 1fr;
+    grid-template-rows: 1fr, 1fr, 1fr;
     width: 100%;
     margin-top: 50px;
 
@@ -38,14 +38,13 @@
 .productsContainer {
     grid-column: 1 / -1;
     grid-row: 2;
-    justify-content: space-evenly;
     display: flex;
     flex-direction: row;
 }
 
-.imgProduct img {
-    height: 350px;
-    width: 300px;
+.imgProduct {
+    height: 250px;
+    width: 250px;
     border-radius: 3px;
     filter: drop-shadow(1px 4px 2px #B58086);
     object-fit: cover;

@@ -302,6 +302,9 @@ footer {
     }
 
         /* Info Shop Page */
+        #infoPage .textPage{
+            font-size: 1.2rem;
+        }
         .googleMaps {
             margin: 0 auto;
             border: #67465B 2px solid;
@@ -314,7 +317,8 @@ footer {
         }
 
         .infoShop ul {
-            font-family: 'Work-Sans';
+            font: 1.1rem 'Work-Sans';
+
             color: #67465B;
             list-style: none;
             padding-left: 0;

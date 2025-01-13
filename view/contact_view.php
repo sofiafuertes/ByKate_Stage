@@ -2,14 +2,17 @@
     <div class="containerText">
         <h1 class="titlePage">CONTACTO</h1>
         <p class="textPage">¿Estás organizando un evento y te gustaría conocer nuestras opciones? ¿Tienes alguna
-            pregunta sobre nuestros productos? <br> ¿O deseas hacer un pedido personalizado? <br>
-            No dudes en preguntarnos cualquier detalle sobre ingredientes, tamaños, precios o cualquier otra duda que
-            tengas. Estamos aquí para ayudarte a crear el pastel perfecto para tu ocasión especial.
-        </p>
+            pregunta sobre nuestros productos? <br> ¿O deseas hacer un pedido personalizado? </p>
+        <p class="textPage">No dudes en preguntarnos cualquier detalle sobre ingredientes, tamaños, precios o cualquier
+            otra duda que
+            tengas. Estamos aquí para ayudarte a crear el pastel perfecto para tu ocasión especial.</p>
+
 
         <p class="textPage">Llena el formulario a continuación para que podamos comenzar a ayudarte con tu pedido. Nos
             pondremos en contacto contigo lo antes posible. Nuestro equipo responde en un plazo de 24 a 48 horas, de
-            lunes a viernes.</p>
+            lunes a viernes. </p>
+        <p class="textPage"> Para ver la información de la tienda click <a href="/ByKate_Stage/infodelatienda">aquí</a>
+        </p>
     </div>
     <section class="containerContactForm">
         <form id="contactForm" action="/ByKate_Stage/config/send_email.php" method="POST">

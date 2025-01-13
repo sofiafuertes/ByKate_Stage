@@ -22,13 +22,16 @@ class ProductsControler
         $this->message = $message;
         return $this;
     }
-    public function displayProducts()
+    public function displayProducts($limit = null)
     {
         $products = $this->products->readAllProducts();
         // echo '<pre>';
         // var_dump($products);
         // echo '</pre>';
         // include 'view/menu_view.php';
+        if ($limit !== null) {
+            $products = array_slice($products, 0, $limit);
+        }
         return $products;
     }
 

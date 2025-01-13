@@ -1,0 +1,23 @@
+#aboutUsPage section{
+        width: 80%;
+        margin: 50px auto;
+
+
+}
+
+#aboutUsPage .aboutUsContainer {
+    grid-column: 1/-1;
+    
+    h1{
+        margin-bottom: 50px;
+    }
+}
+
+#automaticSlideAboutUs{
+display: flex;
+justify-content: center;
+}
+#automaticSlideAboutUs .imgSlide{
+    width: 400px;
+    height: 600px;
+}

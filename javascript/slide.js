@@ -1,45 +1,73 @@
-let imgContainer = document.querySelector("#automaticSlide");
 
-let imgArray = [
-    "./photos/slide_img/imgSlide1.jpg",
-    "./photos/slide_img/imgSlide2.JPG",
-    "./photos/slide_img/imgSlide3.jpg",
-    "./photos/slide_img/imgSlide4.jpg",
-];
 
-imgArray.forEach((slide) => {
-    let div = document.createElement("div");
-    let img = document.createElement("img");
+class AutomaticSlider {
+    constructor(containerSelector, imageArray, transitionDelay = 3000) {
+        this.container = document.querySelector(containerSelector);
+        this.imageArray = imageArray;
+        this.transitionDelay = transitionDelay;
+        this.index = 0;
 
-    img.src = slide;
-    img.classList.add("imgSlide");
+        if (this.container) {
+            this.init();
+        }
+    }
 
-    div.appendChild(img);
-    imgContainer.appendChild(div);
-});
+    init() {
+        // Crear las imágenes y agregarlas al contenedor
+        this.imageArray.forEach((imageSrc) => {
+            const div = document.createElement("div");
+            const img = document.createElement("img");
 
-//Index and transition delay
-let index = 0;
-let transitionDelay = 3000;
+            img.src = imageSrc;
+            img.classList.add("imgSlide");
 
-let slides = imgContainer.querySelectorAll(".imgSlide");
+            div.appendChild(img);
+            this.container.appendChild(div);
+        });
 
-for (let slide of slides) {
-    slide.style.transition = "all ${transitionDelay/1000}s linear";
-}
+        // Obtener las imágenes dentro del contenedor
+        this.slides = this.container.querySelectorAll(".imgSlide");
 
-showSlide(index);
+        // Establecer la transición para cada imagen
+        this.slides.forEach((slide) => {
+            slide.style.transition = `all ${this.transitionDelay / 1000}s linear`;
+        });
 
-function showSlide(numberSlide) {
-    slides.forEach((slide, i) => {
-        slide.style.display = i === numberSlide ? "block" : "none";
-    });
-    index++;
-    if (index >= slides.length) {
-        index = 0;
+        // Mostrar el primer slide
+        this.showSlide(this.index);
+
+        // Iniciar el intervalo automático
+        setInterval(() => {
+            this.showSlide(this.index);
+        }, this.transitionDelay);
+    }
+
+    showSlide(numberSlide) {
+        this.slides.forEach((slide, i) => {
+            slide.style.display = i === numberSlide ? "block" : "none";
+        });
+        this.index++;
+        if (this.index >= this.slides.length) {
+            this.index = 0;
+        }
     }
 }
 
-setInterval(() => {
-    showSlide(index);
-}, transitionDelay);
+// Crear el carrusel para la primera página
+new AutomaticSlider("#automaticSlide", [
+    "./photos/slide_img/imgSlide1.jpg",
+    "./photos/slide_img/imgSlide2.JPG",
+    "./photos/slide_img/imgSlide3.jpg",
+    "./photos/slide_img/imgSlide4.jpg"
+]);
+
+// Crear el carrusel para la segunda página
+new AutomaticSlider("#automaticSlideAboutUs", [
+    "./photos/slide_img/imgSlide5.jpg",
+    "./photos/slide_img/imgSlide6.JPG",
+    "./photos/slide_img/imgSlide7.jpg",
+    "./photos/slide_img/imgSlide8.jpg",
+    "./photos/slide_img/imgSlide9.jpg",
+    "./photos/slide_img/imgSlide10.JPG",
+    "./photos/slide_img/imgSlide11.jpg"
+]);

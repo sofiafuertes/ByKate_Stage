@@ -25,7 +25,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $to = "sofi.fuertes@gmail.com"; //The email address to send the message
         $subject = "Nuevo mensaje del formulario de contacto: $option"; //Subject of the email
         $emailContent = "Nombre: $name\nCorreo: $email\nOpción: $option\n\nMensaje:\n$message";//Body of the email
-        $headers = "From: sofia_fuertes@hotmail.com" . "\r\n" .
+        $headers = 'From: sofi.fuertes@gmail.com' . "\r\n" .
             "Reply-To: $email" . "\r\n" .
             "Content-Type: text/plain; charset=UTF-8";
 

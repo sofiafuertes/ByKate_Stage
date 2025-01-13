@@ -37,10 +37,20 @@ if (preg_match('/^\/ByKate_Stage\/producto\/(\d+)$/', $path, $matches)) {
 switch ($path) {
 
     case $path === "/ByKate_Stage/":
+        include './model/product_model.php';
+        include './manager/product_manager.php';
+        include './controller/products_controller.php';
+        $controller = new ProductsControler();
+        $limit = $_GET['limit'] ?? 4;
+        $products= $controller->displayProducts($limit);
         include './view/home_view.php';
         break;
 
     case $path === "/ByKate_Stage/quienessomos":
+        include './model/textesWeb_model.php';
+        include './manager/textesWeb_manager.php';
+        include './controller/textesWeb_controller.php';
+        $controller = new TextesWeb_controller();
         include './view/aboutUs_view.php';
         break;
 
