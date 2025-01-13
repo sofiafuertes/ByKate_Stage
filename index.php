@@ -85,6 +85,10 @@ switch ($path) {
         include './view/connexionAdmin_view.php';
         break;
 
+    case $path === "/ByKate_Stage/infodelatienda":
+        include './view/shopInfo_view.php';
+        break;
+
     case $path === "/ByKate_Stage/logout":
         include './controller/logout.php';
         $logout = new Logout;

@@ -11,7 +11,7 @@
     </div>
 
     <div class="linksFooter">
-        <a href="#">Información de la tienda</a>
+        <a href="/ByKate_Stage/infodelatienda">Información de la tienda</a>
         <a href="#">Acerca de nuestros productos</a>
         <a href="#">Términos y condiciones</a>
     </div>

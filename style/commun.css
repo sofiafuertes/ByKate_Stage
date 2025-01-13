@@ -148,7 +148,7 @@ nav {
 
 
 /* Footer */
-.flowerImg{
+.flowerImg {
     position: relative;
     width: 100%;
     object-fit: cover;
@@ -156,6 +156,7 @@ nav {
     margin-bottom: -30px;
     z-index: 0;
 }
+
 footer {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
@@ -255,21 +256,73 @@ footer {
     .copyRight {
         grid-column: 2 / 5;
     }
-}
 
-@media (max-width: 768px) {
-    .flowerImg{
-        margin-bottom: -10px;
-    }
-    footer {
-        grid-template-columns: 1 1fr;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 10px;
-    }
-    .linksFooter{
-        align-items: center;
+    /* Shop Info Page */
+    .googleMaps {
+        iframe {
+            width: 90vw;
+        }
     }
 }
+    .infoShop {
+        text-align: center;
+        margin-left: 20px;
+        margin-right: 15px;
+    }
+
+    @media (max-width: 768px) {
+        .flowerImg {
+            margin-bottom: -10px;
+        }
+
+        footer {
+            grid-template-columns: 1 1fr;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .linksFooter {
+            align-items: center;
+        }
+
+        /* Shop Info Page */
+        #infoPage {
+            .titlePage {
+                font-size: 1.6rem;
+            }
+
+            .textPage {
+                text-align: center;
+            }
+        }
+
+    }
+
+        /* Info Shop Page */
+        .googleMaps {
+            margin: 0 auto;
+            border: #67465B 2px solid;
+            width: fit-content;
+        }
+
+        .infoShop {
+            display: flex;
+            justify-content: center;
+        }
+
+        .infoShop ul {
+            font-family: 'Work-Sans';
+            color: #67465B;
+            list-style: none;
+            padding-left: 0;
+            li {
+                margin-top: 10px;
+            }
+
+            a {
+                color: #67465B;
+            }
+        }

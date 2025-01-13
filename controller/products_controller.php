@@ -84,7 +84,7 @@ class ProductsControler
             }
 
             if (!in_array($fileExtension, $allowedExtensions)) {
-                $this->setMessage("Solo se permiten imágenes (jpg, jpeg, png, gif).");
+                $this->setMessage("Solo se permiten imágenes (jpg, jpeg, png).");
                 return false;
             }
 
