@@ -169,5 +169,23 @@ class ProductsControler
     }
 }
 
+public function deleteProduct(){
+    if(isset($_GET['id'])){
+        $id = intval($_GET['id']);
+
+        $result = $this->products->deleteProductbyId($id);
+
+        if($result){
+            header('Location: /ByKate_Stage/gestion?message=Producto eliminado con éxito');
+            exit;
+        }else{
+            echo 'Error al eliminar el producto';
+        }
+    }else{
+        echo 'ID del producto no proporcionado';
+    }
+}
+
+
     }
 

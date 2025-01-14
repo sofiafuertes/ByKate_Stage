@@ -99,6 +99,16 @@ switch ($path) {
         $controller->updateProduct(); 
         break;
 
+    case $path === "/ByKate_Stage/gestion/delete":
+            include './utils/functions.php';
+            include './model/product_model.php';
+            include './manager/product_manager.php';
+            include './controller/products_controller.php';
+    
+            $controller = new ProductsControler();
+            $controller->deleteProduct(); 
+            break;
+
 
     case $path === "/ByKate_Stage/conexion":
         include 'env.php';

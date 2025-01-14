@@ -29,8 +29,8 @@
                                 <td><?= htmlspecialchars($product['servings']) ?></td>
                                 <td>
                                     <a href="#" class="modify-link" data-id="<?= $product['id_product'] ?>">Modificar</a>
-                                    <a href="delete_product.php?id=<?= $product['id_product'] ?>">Eliminar</a>
-                                </td>
+                                    <a href="/ByKate_Stage/gestion/delete?id=<?= $product['id_product'] ?>">Eliminar</a>
+                                    </td>
                             </tr>
                             <tr class="edit-form" id="edit-form-<?= $product['id_product'] ?>" style="display: none;">
                                 <td colspan="5">

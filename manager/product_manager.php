@@ -86,7 +86,18 @@ class ProductManager
             error_log('Error al actualizar el producto: ' . $e->getMessage());
             return false;
         }
+    }
 
+    public function deleteProductByID(int $id) :bool{
+        try{
+            $query = $this->db->prepare('DELETE FROM product WHERE id_product = :id');
+            $query->bindValue(':id',$id,PDO::PARAM_INT);
+            $query->execute();
+            return $query->rowCount() > 0;
 
+        }catch (PDOException $e){
+            error_log('Error al eliminar el producto: '. $e->getMessage());
+            return false;
+        }
     }
 }
