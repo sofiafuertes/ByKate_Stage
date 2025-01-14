@@ -3,6 +3,7 @@ class ProductsControler
 {
     private $products;
 
+
     private ?string $message;
 
 
@@ -137,4 +138,36 @@ class ProductsControler
     }
 
 
+    public function updateProduct(){
+    if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['updateProduct'])) {
+        $id = intval($_POST['id_product']);
+        $name = $_POST['product_name'];
+        $description = $_POST['product_description'];
+        $allergies = $_POST['product_allergies'];
+        $servings = $_POST['product_servings'];
+
+        $product = new Product(
+            $id,
+            $name,
+            $description,
+            $allergies,
+            $servings
+        );
+
+        $result = $this->products->updateProduct($product);
+
+        if ($result) {
+            // Redirige a la página de gestión con un mensaje de éxito
+            header('Location: /ByKate_Stage/gestion?message=Producto actualizado');
+            exit;
+        } else {
+            // Muestra un mensaje de error
+            echo "Error al actualizar el producto.";
+        }
+    } else {
+        echo "Método no permitido o datos incompletos.";
+    }
 }
+
+    }
+

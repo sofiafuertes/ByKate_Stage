@@ -19,52 +19,30 @@
                     <?php endforeach; ?>
                 <?php endif; ?>
             </div>
+        </div>
             <div class="divButton">
                 <button><a href="/ByKate_Stage/nuestromenu">Todos los productos</a></button>
+            </div>
+    </section>
+
+    <section class="sectionAboutUs">
+        <div class="sectionContainer">
+            <div class="sectionContent">
+                <div class="sectionTitle">
+                    <h1>La historia de nuestra tienda</h1>
+                </div>
+                <div class="sectionText">
+                    <p><?php echo $controller->displayText('/ByKate_Stage/quienessomos', 'storyShop') ?></p>
+                </div>
+                <div class="divButton">
+                    <button><a href="/ByKate_Stage/quienessomos">Continuar leyendo</a></button>
+                </div>
+            </div>
+            <div class="sectionImg">
+                <img src="./photos/storyShop.jpg" alt="Foto de la tienda desde arriba">
             </div>
         </div>
     </section>
 
 
-        <section class="aboutUsSection">
-            <div class="aboutUsContainer">
-                <div class="aboutUsRight">
-                    <div class="titleTextFlex">
-                        <h1>Nuestra Historia</h1>
-                    </div>
-                    <div class="aboutUsText">
-                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corporis, est. Lorem ipsum dolor
-                            sit
-                            amet
-                            consectetur adipisicing elit. Amet nulla molestiae consequatur nemo earum eligendi, odit
-                            iusto
-                            tempore voluptatibus ratione placeat sed, est vitae at, quasi corrupti dolor eum porro autem
-                            laborum
-                            ut? Temporibus quae, eos veniam illo expedita illum. Lorem ipsum dolor sit amet consectetur
-                            adipisicing elit. Quam, maxime.Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                            Corporis, est. Lorem ipsum dolor sit amet
-                            consectetur adipisicing elit. Amet nulla molestiae consequatur nemo earum eligendi, odit
-                            iusto
-                            tempore voluptatibus ratione placeat sed, est vitae at, quasi corrupti dolor eum porro autem
-                            laborum
-                            ut? Temporibus quae, eos veniam illo expedita illum. Lorem ipsum dolor sit amet consectetur
-                            adipisicing elit. Quam, maxime.Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                            Corporis, est. Lorem ipsum dolor sit amet
-                            consectetur adipisicing elit. Amet nulla molestiae consequatur nemo earum eligendi, odit
-                            iusto
-                            tempore voluptatibus ratione placeat sed, est vitae at, quasi corrupti dolor eum porro autem
-                            laborum
-                            ut? Temporibus quae, eos veniam illo expedita illum. Lorem ipsum dolor sit amet consectetur
-                            adipisicing elit. Quam, maxime.</p>
-                    </div>
-                    <div class="divButton">
-                        <button><a href="/ByKate_Stage/quienessomos">Continuar leyendo</a></button>
-                    </div>
-                </div>
-                <div class="aboutUsImg">
-                    <img src="./photos/aboutUsHome.jpg" alt="Foto de la pastelería">
-                </div>
-            </div>
-
-        </section>
 </main>

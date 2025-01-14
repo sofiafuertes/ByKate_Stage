@@ -23,6 +23,7 @@
     grid-template-rows: 1fr, 1fr, 1fr;
     width: 100%;
     margin-top: 50px;
+    padding-bottom: 18px;
 
 }
 
@@ -40,11 +41,14 @@
     grid-row: 2;
     display: flex;
     flex-direction: row;
+    justify-content: center;
+    margin-bottom: 18px;
+
 }
 
 .imgProduct {
-    height: 250px;
-    width: 250px;
+    height: 280px;
+    width: 280px;
     border-radius: 3px;
     filter: drop-shadow(1px 4px 2px #B58086);
     object-fit: cover;
@@ -82,74 +86,6 @@
         color: #67465B;
     }
 }
-
-
-
-
-
-
-/* About Us Section */
-
-.aboutUsSection {
-    display: grid;
-    grid-template-columns: repeat(8, 1fr);
-    grid-template-rows: 1fr;
-    width: 100%;
-    margin-top: 50px;
-}
-
-.aboutUsContainer {
-    grid-column: 2/8;
-    /* display: grid; */
-    display: flex;
-    flex-direction: row;
-    /* flex-wrap: wrap; */
-    background-color: #e4dddfb3;
-    padding: 20px;
-    align-items: center;
-}
-
-.titleTextFlex {
-    align-self: flex-start;
-}
-
-.titleTextFlex h1 {
-    text-align: left;
-    color: #67465B;
-    font-family: 'Work-Sans';
-    margin: 0;
-}
-
-.aboutUsText {    
-    font-family: 'Work-Sans';
-    padding-right: 10px;
-}
-
-.aboutUsImg{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.aboutUsImg img {
-    align-self: center;
-    height: 350px;
-    width: 300px;
-    border-radius: 3px;
-    filter: drop-shadow(1px 4px 2px #B58086);
-    object-fit: cover;
-    object-position: center;
-}
-
-.aboutUsSection button {
-    grid-row: 2;
-    justify-self: flex-start;
-}
-
-
-
-
-
-
 
 
 
@@ -211,25 +147,5 @@
         grid-row: 4;
     }
 
-    .aboutUsSection {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .aboutUsContainer {
-        grid-column: 1/ -1;
-        display: flex;
-        flex-direction: column;
-        padding: 10px;
-        align-items: center;
-    }
-
-    .aboutUsImg img{
-        margin-top: 15px;
-        grid-column: 1/ -1;
-    }
-
-    .aboutUsSection button {
-        justify-self: left;
-    }
+    
 }

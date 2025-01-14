@@ -24,6 +24,28 @@ document.addEventListener('DOMContentLoaded',() => {
             listProducts.style.display = 'none';
         }
     })
+
+    const modifyLinks = document.querySelectorAll('.modify-link');
+    const cancelButtons = document.querySelectorAll('.cancel-button');
+
+    // Mostrar formulario de edición
+    modifyLinks.forEach(link => {
+        link.addEventListener('click', (event) => {
+            event.preventDefault();
+            const id = link.getAttribute('data-id');
+            const formRow = document.getElementById(`edit-form-${id}`);
+            formRow.style.display = formRow.style.display === 'none' ? 'table-row' : 'none';
+        });
+    });
+
+    // Ocultar formulario de edición
+    cancelButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const id = button.getAttribute('data-id');
+            const formRow = document.getElementById(`edit-form-${id}`);
+            formRow.style.display = 'none';
+        });
+    });
 })
 
 // document.addEventListener('DOMContentLoaded',() => {

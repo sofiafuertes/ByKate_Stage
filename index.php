@@ -38,11 +38,16 @@ switch ($path) {
 
     case $path === "/ByKate_Stage/":
         include './model/product_model.php';
+        include './model/textesWeb_model.php';
         include './manager/product_manager.php';
+        include './manager/textesWeb_manager.php';
         include './controller/products_controller.php';
+        include './controller/textesWeb_controller.php';
         $controller = new ProductsControler();
         $limit = $_GET['limit'] ?? 4;
-        $products= $controller->displayProducts($limit);
+        $products = $controller->displayProducts($limit);
+        $controller = new TextesWeb_controller();
+
         include './view/home_view.php';
         break;
 
@@ -59,7 +64,7 @@ switch ($path) {
         include './manager/product_manager.php';
         include './controller/products_controller.php';
         $controller = new ProductsControler();
-        $products= $controller->displayProducts();
+        $products = $controller->displayProducts();
         include './view/menu_view.php';
         break;
 
@@ -80,9 +85,20 @@ switch ($path) {
         $addingProduct = new ProductsControler();
         $addingProduct->addProduct();
         $controller = new ProductsControler();
-        $products= $controller->displayProducts();
+        $products = $controller->displayProducts();
         include './view/adminhome_view.php';
         break;
+
+    case $path === "/ByKate_Stage/gestion/update":
+        include './utils/functions.php';
+        include './model/product_model.php';
+        include './manager/product_manager.php';
+        include './controller/products_controller.php';
+
+        $controller = new ProductsControler();
+        $controller->updateProduct(); 
+        break;
+
 
     case $path === "/ByKate_Stage/conexion":
         include 'env.php';

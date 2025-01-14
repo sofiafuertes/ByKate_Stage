@@ -11,20 +11,49 @@
                 <?php if (empty($products)): ?>
                     <p>No hay productos registrados</p>
                 <?php else: ?>
-                    <?php foreach ($products as $product): ?>
-                        <div class="oneProduct" data-name="<?= htmlspecialchars($product['product_name']) ?>">
-                            <img src="<?= htmlspecialchars($product['photo_principal_path']) ?>"
-                                alt="<?= htmlspecialchars($product['product_name']) ?>">
-                            <div class="product-info">
-                                <h3><?= htmlspecialchars($product['product_name']) ?></h3>
-                                <p><?= htmlspecialchars($product['product_description']) ?></p>
-                                <p>Alérgenos: <?= htmlspecialchars($product['allergies']) ?></p>
-                                <p>Porciones: <?= htmlspecialchars($product['servings']) ?></p>
-                            </div>
-                            <!-- <button id="btnDeleteProduct">Eliminar</button>
-                                <button id="btnHideProduct">Ocultar</button> -->
-                        </div>
-                    <?php endforeach; ?>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Nombre</th>
+                                <th>Descripción</th>
+                                <th>Alergias</th>
+                                <th>Porciones</th>
+                                <th>Acción</th>
+                            </tr>
+                        </thead>
+                        <?php foreach ($products as $product): ?>
+                            <tr class="oneProduct" data-name="<?= htmlspecialchars($product['product_name']) ?>">
+                                <td class="nameProduct"><?= htmlspecialchars($product['product_name']) ?></td>
+                                <td><?= htmlspecialchars($product['product_description']) ?></td>
+                                <td><?= htmlspecialchars($product['allergies']) ?></td>
+                                <td><?= htmlspecialchars($product['servings']) ?></td>
+                                <td>
+                                    <a href="#" class="modify-link" data-id="<?= $product['id_product'] ?>">Modificar</a>
+                                    <a href="delete_product.php?id=<?= $product['id_product'] ?>">Eliminar</a>
+                                </td>
+                            </tr>
+                            <tr class="edit-form" id="edit-form-<?= $product['id_product'] ?>" style="display: none;">
+                                <td colspan="5">
+                                    <form id="updateProductForm" method="POST" action="/ByKate_Stage/gestion/update">
+                                        <input type="hidden" name="id_product" value="<?= $product['id_product'] ?>">
+                                        <label>Nombre: <input type="text" name="product_name"
+                                                value="<?= htmlspecialchars($product['product_name']) ?>"></label>
+                                        <label>Descripción: <textarea
+                                                name="product_description"><?= htmlspecialchars($product['product_description']) ?></textarea></label>
+                                        <label>Alergias: <input type="text" name="product_allergies"
+                                                value="<?= htmlspecialchars($product['allergies']) ?>"></label>
+                                        <label>Porciones: <input type="text" name="product_servings"
+                                                value="<?= htmlspecialchars($product['servings']) ?>"></label>
+
+                                        <button type="submit" name="updateProduct">Aceptar</button>
+                                        <button type="button" class="cancel-button"
+                                            data-id="<?= $product['id_product'] ?>">Cancelar</button>
+
+                                    </form>
+                                </td>
+                            </tr>
+                        <?php endforeach; ?>
+                    </table>
                 <?php endif; ?>
             </div>
         </div>

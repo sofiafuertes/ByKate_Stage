@@ -56,7 +56,7 @@ class ProductManager
             $query->bindParam(1, $name, PDO::PARAM_STR);
             $query->bindParam(2, $description, PDO::PARAM_STR);
             $query->bindParam(3, $allergies, PDO::PARAM_STR);
-            $query->bindParam(4, $servings, PDO::PARAM_STR); 
+            $query->bindParam(4, $servings, PDO::PARAM_STR);
             $query->bindParam(5, $photoPrincipal, PDO::PARAM_STR);
             // $query->bindParam(6, $photo1, PDO::PARAM_STR);
             // $query->bindParam(7, $photo2, PDO::PARAM_STR);
@@ -65,32 +65,28 @@ class ProductManager
             return "Producto agregado con éxito";
         } catch (PDOException $e) {
             error_log('Error al agregar producto: ' . $e->getMessage());
-            return "Error al agregar producto:". $e->getMessage();
+            return "Error al agregar producto:" . $e->getMessage();
         }
     }
 
+
+    public function updateProduct(Product $product): bool
+    {
+
+        try {
+            $query = $this->db->prepare('UPDATE product SET product_name = :nameProduct, product_description = :descriptionProduct, allergies = :allergies, servings = :servings WHERE id_product = :id');
+
+            $query->bindValue(':nameProduct', $product->getName_product(), PDO::PARAM_STR);
+            $query->bindValue(':descriptionProduct', $product->getDescription_product(), PDO::PARAM_STR);
+            $query->bindValue(':allergies', $product->getAllergies(), PDO::PARAM_STR);
+            $query->bindValue(':servings', $product->getServings(), PDO::PARAM_STR);
+            $query->bindValue(':id', $product->getId_product(), PDO::PARAM_INT);
+            return $query->execute();
+        } catch (PDOException $e) {
+            error_log('Error al actualizar el producto: ' . $e->getMessage());
+            return false;
+        }
+
+
+    }
 }
-
-// public function createProduct(Product $product): void{
-//     $pdo = $this->db->connect();
-//     $query = $pdo->prepare('INSERT INTO products (product_name, product_description, allergies, servings, photo_principal, photo1, photo2, photo3) VALUES (:product_name, :product_description, :allergies, :servings, :photo_principal, :photo1, :photo2, :photo3)');
-//     $query->execute([
-//         'product_name' => $product->getName_product(),
-//         'product_description' => $product->getDescription_product(),
-//         'allergies' => $product->getAllergies(),
-//         'servings' => $product->getServings(),
-//         'photo_principal' => $product->getPhotoPrincipal(),
-//         'photo1' => $product->getPhoto1(),
-//         'photo2' => $product->getPhoto2(),
-//         'photo3' => $product->getPhoto3()
-//     ]);
-// }
-
-// public function updateProduct(Product $product): void{
-//     $pdo = $this->db->connect();
-//     $query = $pdo->prepare('UPDATE products SET product_name = :product_name, product_description = :product_description, allergies = :allergies, servings = :servings, photo_principal = :photo_principal, photo1 = :photo1, photo2 = :photo2, photo3 = :photo3 WHERE id_product = :id');
-//     $query->execute([
-//         'product_name' => $product->getName_product(),
-//         'product_description' => $product->getDescription_product(),
-//         'allergies' => $product->getAll
-//}

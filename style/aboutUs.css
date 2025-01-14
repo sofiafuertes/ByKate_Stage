@@ -1,16 +1,39 @@
-#aboutUsPage section{
-        width: 80%;
-        margin: 50px auto;
 
+.sectionAboutUs{
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    font-family: 'Work-Sans';
+    color:#67465B ;
+    margin: 50px 0;
+}
+.sectionContainer{
+    display: grid;
+    grid-column: 2/8;
+    background-color: #e4dddfb3;
+    border-radius: 3px;
+    padding: 10px;
+}
+.sectionContent{
+    grid-column: 2/5;
+    display: flex;
+    flex-direction: column;
+    margin: 0 15px;
+}
+.sectionText p{
+    margin-right: 15px;
+}
+.sectionImg{
+    display: grid;
+    grid-column: 6/7;
 
 }
-
-#aboutUsPage .aboutUsContainer {
-    grid-column: 1/-1;
-    
-    h1{
-        margin-bottom: 50px;
-    }
+.sectionImg img{
+    width: 250px;
+    border-radius: 3px;
+    filter: drop-shadow(1px 4px 2px #B58086);
+}
+.sectionAboutUs button{
+    justify-self: left;
 }
 
 #automaticSlideAboutUs{
@@ -20,4 +43,5 @@ justify-content: center;
 #automaticSlideAboutUs .imgSlide{
     width: 400px;
     height: 600px;
+    border-radius: 3px;
 }
