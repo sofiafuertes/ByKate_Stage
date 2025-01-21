@@ -19,9 +19,10 @@
     font-family: 'Work-Sans';
     color: #67465B;
     font-size: 1.1rem;
+
     a {
-    color: #67465B;
-}
+        color: #67465B;
+    }
 }
 
 .containerProducts {
@@ -36,7 +37,7 @@
     flex-wrap: wrap;
     gap: 30px;
     row-gap: 30px;
-    justify-content:center;
+    justify-content: center;
 }
 
 .product {
@@ -48,6 +49,7 @@
     border-radius: 3px;
     background-color: #e4dddf;
     filter: drop-shadow(1px 4px 2px #B58086);
+
     a {
         text-decoration: none;
         color: #67465B;
@@ -108,10 +110,11 @@
 
 
 /* Product Detail */
-.breadcrumb{
+.breadcrumb {
     font-family: 'Work-Sans';
-    margin: 10px 0 0 10px ;
-    a{
+    margin: 10px 0 0 10px;
+
+    a {
         color: #67465B;
 
     }
@@ -199,7 +202,8 @@ h2 {
     font-size: 1.2rem;
     text-align: center;
     color: #67465B;
-    a{
+
+    a {
         color: #67465B;
     }
 }
@@ -222,23 +226,30 @@ h2 {
         flex-direction: column;
         justify-content: center;
     }
-    .textPage{
+
+    .textPage {
         font-size: 1rem;
         margin-left: 5px;
         margin-right: 5px;
     }
+
+    .containerProducts {
+        display: grid;
+        margin: 0 auto;
+    }
+
     .products {
-        flex-direction: column;
         align-items: center;
+        gap: 0;
     }
 
     .product {
         width: 80%;
-        margin: 10px;
+        margin-bottom: 15px;
     }
 
     .searchField {
-        margin: auto;
+        margin: 0 auto 15px auto;
     }
 
     .containerSearch {

@@ -18,7 +18,7 @@
         </div>
     </section>
 
-    <section id="automaticSlideAboutUs">
+    <section id="automaticSlideAboutUs" class="slider">
     </section>
 
     <section class="sectionAboutUs">

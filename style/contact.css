@@ -32,8 +32,11 @@
 }
 #contactForm .button{
     justify-self: flex-end;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     color: #e4dddf;
+}
+#contactForm .button:hover{
+    color: #67465B;
 }
 
 

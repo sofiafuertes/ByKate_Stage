@@ -44,7 +44,7 @@ nav {
 .navbar {
     display: flex;
     flex-direction: row;
-    flex-grow: 4;
+    flex-grow: 6;
     justify-content: flex-end;
     align-items: center;
 }
@@ -53,7 +53,7 @@ nav {
 .navPages {
     display: flex;
     flex-grow: 4;
-    justify-content: space-between;
+    justify-content: space-evenly ;
 }
 
 .navPages a {

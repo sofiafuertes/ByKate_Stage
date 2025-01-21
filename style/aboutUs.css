@@ -1,47 +1,101 @@
+#aboutUsPage{
+    margin-top: 40px;
+}
 
-.sectionAboutUs{
+.sectionAboutUs {
     display: grid;
     grid-template-columns: repeat(8, 1fr);
     font-family: 'Work-Sans';
-    color:#67465B ;
+    color: #67465B;
     margin: 50px 0;
 }
-.sectionContainer{
+
+.sectionContainer {
     display: grid;
     grid-column: 2/8;
     background-color: #e4dddfb3;
     border-radius: 3px;
     padding: 10px;
 }
-.sectionContent{
+
+.sectionContent {
     grid-column: 2/5;
     display: flex;
     flex-direction: column;
     margin: 0 15px;
 }
-.sectionText p{
+
+.sectionText p {
     margin-right: 15px;
 }
-.sectionImg{
+
+.sectionImg {
     display: grid;
     grid-column: 6/7;
 
 }
-.sectionImg img{
+
+.sectionImg img {
     width: 250px;
     border-radius: 3px;
     filter: drop-shadow(1px 4px 2px #B58086);
 }
-.sectionAboutUs button{
+
+.sectionAboutUs button {
     justify-self: left;
 }
 
-#automaticSlideAboutUs{
-display: flex;
-justify-content: center;
+/* #automaticSlideAboutUs {
+    display: flex;
+    justify-content: center;
 }
-#automaticSlideAboutUs .imgSlide{
+
+#automaticSlideAboutUs .imgSlide {
     width: 400px;
     height: 600px;
     border-radius: 3px;
+} */
+
+
+.slider {
+    display: flex;
+    overflow: hidden;
+    white-space: nowrap;
+    scroll-behavior:smooth;
+    margin: 0 50px;
+    border-radius: 3px;
+}
+
+.slider img {
+    height: 500px;
+    margin-right: 10px;
+    border-radius: 3px;
+}
+
+
+
+@media (max-width: 768px) {
+    .sectionContainer {
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+
+        h1 {
+            font-size: 1.3rem;
+            margin: 10px 0;
+        }
+    }
+
+    .sectionText p {
+        margin: 0;
+    }
+
+    .sectionImg {
+        margin: 10px auto;
+    }
+
+    .sectionAboutUs button {
+        justify-self: center;
+        margin-top: 10px;
+    }
 }

@@ -1,5 +1,3 @@
-
-
 class AutomaticSlider {
     constructor(containerSelector, imageArray, transitionDelay = 3000) {
         this.container = document.querySelector(containerSelector);
@@ -30,7 +28,9 @@ class AutomaticSlider {
 
         // Establecer la transición para cada imagen
         this.slides.forEach((slide) => {
-            slide.style.transition = `all ${this.transitionDelay / 1000}s linear`;
+            slide.style.transition = `all ${
+                this.transitionDelay / 1000
+            }s linear`;
         });
 
         // Mostrar el primer slide
@@ -58,16 +58,52 @@ new AutomaticSlider("#automaticSlide", [
     "./photos/slide_img/imgSlide1.jpg",
     "./photos/slide_img/imgSlide2.JPG",
     "./photos/slide_img/imgSlide3.jpg",
-    "./photos/slide_img/imgSlide4.jpg"
+    "./photos/slide_img/imgSlide4.jpg",
 ]);
 
-// Crear el carrusel para la segunda página
-new AutomaticSlider("#automaticSlideAboutUs", [
-    "./photos/slide_img/imgSlide5.jpg",
+// // Crear el carrusel para la segunda página
+// new AutomaticSlider("#automaticSlideAboutUs", [
+//     "./photos/slide_img/imgSlide5.jpg",
+//     "./photos/slide_img/imgSlide6.JPG",
+//     "./photos/slide_img/imgSlide7.jpg",
+//     "./photos/slide_img/imgSlide8.jpg",
+//     "./photos/slide_img/imgSlide9.jpg",
+//     "./photos/slide_img/imgSlide10.JPG",
+//     "./photos/slide_img/imgSlide11.jpg",
+// ]);
+
+
+const imagesAboutUs = ["./photos/slide_img/imgSlide5.jpg",
     "./photos/slide_img/imgSlide6.JPG",
     "./photos/slide_img/imgSlide7.jpg",
     "./photos/slide_img/imgSlide8.jpg",
     "./photos/slide_img/imgSlide9.jpg",
     "./photos/slide_img/imgSlide10.JPG",
-    "./photos/slide_img/imgSlide11.jpg"
-]);
+    "./photos/slide_img/imgSlide11.jpg",]
+
+
+const slider = document.querySelector("#automaticSlideAboutUs");
+
+imagesAboutUs.forEach((imageSrc) => {
+    const img = document.createElement('img');
+    img.src = imageSrc;
+    img.alt = "Carousel Image";
+    slider.appendChild(img);
+})
+
+
+// Función para desplazar automáticamente
+function startAutoScroll() {
+    const SCROLL_STEP = 5; // Velocidad del desplazamiento
+    setInterval(() => {
+        slider.scrollLeft += SCROLL_STEP;
+
+        // Reiniciar el scroll al principio cuando llegue al final
+        if (slider.scrollLeft + slider.clientWidth >= slider.scrollWidth) {
+            slider.scrollLeft = 0;
+        }
+    }, 10); // Ajusta la frecuencia del desplazamiento (en milisegundos)
+}
+
+// Iniciar el desplazamiento automático
+startAutoScroll();
