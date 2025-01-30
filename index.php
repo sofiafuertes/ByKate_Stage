@@ -124,6 +124,15 @@ switch ($path) {
     case $path === "/ByKate_Stage/infodelatienda":
         include './view/shopInfo_view.php';
         break;
+    
+    case $path === "/ByKate_Stage/acercaproductos":
+            include './view/aboutProducts_view.php';
+            break;
+
+    case $path === "/ByKate_Stage/terminosycondiciones":
+                include './view/conditions_view.php';
+                break;
+
 
     case $path === "/ByKate_Stage/logout":
         include './controller/logout.php';

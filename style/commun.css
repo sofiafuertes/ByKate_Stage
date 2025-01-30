@@ -330,3 +330,36 @@ footer {
                 color: #67465B;
             }
         }
+
+/* About Products Page */
+
+#aboutProducts{
+    margin: 0 150px;
+    h2{
+        font-family: 'Work-Sans';
+    }
+    p{
+        text-align: left;
+        font-size: 1.2rem;
+
+    }
+}
+
+/* Conditions page */
+#conditionsPage{
+    margin: 0 150px;
+    h2{
+        font-family: 'Work-Sans';
+    }
+    p{
+        text-align: left;
+        color: black;
+        font-size: 1.2rem;
+    }
+    li{
+        font-family: 'Work-Sans';
+        font-size: 1.2rem;
+
+        
+    }
+}

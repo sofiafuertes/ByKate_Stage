@@ -1,6 +1,6 @@
 <main>
     <div class="breadcrumb">
-    <a  href="/ByKate_Stage/nuestromenu">< menú/<?= htmlspecialchars($product['product_name']) ?></a>
+    <a  href="/ByKate_Stage/nuestromenu">< menú - <?= htmlspecialchars($product['product_name']) ?></a>
     </div>
     <section>
         <div class="containerDetailProduct">
@@ -23,7 +23,6 @@
     </section>
     <!-- If there are extra photos -->
     <section class="containerExtraPhotosProduct">
-        <h1>Fotos Extra</h1>
         <div class="extraPhotosProduct">
             <?php if (!empty($product['photo1_path'])): ?>
                 <img src="<?= htmlspecialchars($product['photo1_path']) ?>" alt="Foto adicional 1">
@@ -34,10 +33,7 @@
             <?php if (!empty($product['photo3_path'])): ?>
                 <img src="<?= htmlspecialchars($product['photo3_path']) ?>" alt="Foto adicional 3">
             <?php endif; ?>
-            <?php if (empty($product['photo1_path']) && empty($product['photo2_path']) && empty($product['photo3_path'])): ?>
-                <p>No hay fotos</p>
-            <?php endif; ?>
-
+            
         </div>
     </section>
 
