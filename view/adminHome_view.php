@@ -31,12 +31,12 @@
                                 <td>
                                     <a href="#" class="modify-link" data-id="<?= $product['id_product'] ?>">Modificar</a>
                                     <a href="/ByKate_Stage/gestion/delete?id=<?= $product['id_product'] ?>">Eliminar</a>
-                                    </td>
+                                </td>
                             </tr>
                             <tr class="edit-form" id="edit-form-<?= $product['id_product'] ?>" style="display: none;">
                                 <td colspan="5">
-                                    <form id="updateProductForm" method="POST" action="/ByKate_Stage/gestion/update">
-                                        <input type="hidden" name="id_product" value="<?= $product['id_product'] ?>">
+                                <form id="updateProductForm_<?= $product['id_product'] ?>" method="POST" action="/ByKate_Stage/gestion/update">
+                                <input type="hidden" name="id_product" value="<?= $product['id_product'] ?>">
                                         <label>Nombre: <input type="text" name="product_name"
                                                 value="<?= htmlspecialchars($product['product_name']) ?>"></label>
                                         <label>Descripción: <textarea
@@ -58,7 +58,7 @@
                 <?php endif; ?>
             </div>
         </div>
-  
+
 
         <div id="addProductForm" style='display:none'>
             <h2>Agregar nuevo producto</h2>
@@ -95,4 +95,18 @@
             <button>Agregar receta</button>
         </div>
     </section>
+
+    <section class="changePwd">
+        <h1 class="titlePage">Cambiar contraseña</h1>
+        <form id="changePwdForm" method="POST" action="/ByKate_Stage/gestion">
+            <input type="password" name="old_password" placeholder="Contraseña actual" required>
+            <input type="password" name="new_password" placeholder="Nueva contraseña" required>
+            <input type="password" name="new_password_confirm" placeholder="Confirmar nueva contraseña" required>
+            <p class="messagePwd"><?php echo isset($loginController) ?  $loginController->getMessage() : ''; ?></p>
+            <button class="button" type="submit" name="changePasswordSubmit">Cambiar contraseña</button>
+            </form>
+    </section>
+
+
+
 </main>

@@ -82,10 +82,18 @@ switch ($path) {
         include './model/product_model.php';
         include './manager/product_manager.php';
         include './controller/products_controller.php';
+        include './model/users_model.php';
+        include './manager/users_manager.php';
+        include './controller/login_controler.php';
+
         $addingProduct = new ProductsControler();
         $addingProduct->addProduct();
         $controller = new ProductsControler();
         $products = $controller->displayProducts();
+
+        $loginController = new Login_controler();
+        $loginController->changePassword();
+
         include './view/adminhome_view.php';
         break;
 
@@ -96,18 +104,18 @@ switch ($path) {
         include './controller/products_controller.php';
 
         $controller = new ProductsControler();
-        $controller->updateProduct(); 
+        $controller->updateProduct();
         break;
 
     case $path === "/ByKate_Stage/gestion/delete":
-            include './utils/functions.php';
-            include './model/product_model.php';
-            include './manager/product_manager.php';
-            include './controller/products_controller.php';
-    
-            $controller = new ProductsControler();
-            $controller->deleteProduct(); 
-            break;
+        include './utils/functions.php';
+        include './model/product_model.php';
+        include './manager/product_manager.php';
+        include './controller/products_controller.php';
+
+        $controller = new ProductsControler();
+        $controller->deleteProduct();
+        break;
 
 
     case $path === "/ByKate_Stage/conexion":
@@ -124,14 +132,14 @@ switch ($path) {
     case $path === "/ByKate_Stage/infodelatienda":
         include './view/shopInfo_view.php';
         break;
-    
+
     case $path === "/ByKate_Stage/acercaproductos":
-            include './view/aboutProducts_view.php';
-            break;
+        include './view/aboutProducts_view.php';
+        break;
 
     case $path === "/ByKate_Stage/terminosycondiciones":
-                include './view/conditions_view.php';
-                break;
+        include './view/conditions_view.php';
+        break;
 
 
     case $path === "/ByKate_Stage/logout":
