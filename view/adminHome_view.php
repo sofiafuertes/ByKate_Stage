@@ -5,6 +5,7 @@
             <button id="btnProductList">Ver lista de productos</button>
             <button id="btnNewProduct">Agregar nuevo producto</button>
         </div>
+
         <div id="productsList" style="display:none">
             <h2>Lista de productos</h2>
             <div class="productsAdmin">
@@ -57,6 +58,8 @@
                 <?php endif; ?>
             </div>
         </div>
+  
+
         <div id="addProductForm" style='display:none'>
             <h2>Agregar nuevo producto</h2>
             <form id="productForm" method="POST" enctype="multipart/form-data">
@@ -65,18 +68,23 @@
                 <input type="text" name="product_allergies" placeholder="Alergias">
                 <input type="text" name="product_servings" placeholder="Porciones">
                 <input type="hidden" name="MAX_SIZE_FILE" value="5000000">
+
                 <label for="main_photo">Foto principal:</label>
                 <input type="file" name="main_photo" accept="image/*" required>
-                <!-- <label for="extra_image1">Foto extra 1:</label>
+
+                <label for="extra_image1">Foto extra 1:</label>
                 <input type="file" name="extra_image1" accept="image/*">
+
                 <label for="extra_image2">Foto extra 2:</label>
                 <input type="file" name="extra_image2" accept="image/*">
+
                 <label for="extra_image3">Foto extra 3:</label>
-                <input type="file" name="extra_image3" accept="image/*"> -->
+                <input type="file" name="extra_image3" accept="image/*">
+
                 <input class="button" type="submit" name="submitProduct" value="Agregar producto">
             </form>
-            <p><?php echo $addingProduct->getMessage() ?? ''; ?></p>
         </div>
+        <p class="messageForm"><?php echo htmlspecialchars($addingProduct->getMessage()); ?></p>
 
     </section>
 

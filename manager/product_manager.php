@@ -44,23 +44,23 @@ class ProductManager
         $allergies = $product->getAllergies();
         $servings = $product->getServings();
         $photoPrincipal = $product->getPhotoPrincipal();
-
+        $photo1 = $product->getPhoto1();
+        $photo2 = $product->getPhoto2();
+        $photo3 = $product->getPhoto3();
         // var_dump($name, $description, $allergies, $servings);
-        // $photo1 = $product->getPhoto1();
-        // $photo2 = $product->getPhoto2();
-        // $photo3 = $product->getPhoto3();
 
         try {
-            $query = $this->db->prepare('INSERT INTO product (product_name, product_description, allergies, servings,photo_principal_path) VALUES (?, ?, ?, ?,?)');
+            $query = $this->db->prepare('INSERT INTO product (product_name, product_description, allergies, servings,photo_principal_path, photo1_path, photo2_path, photo3_path) VALUES (?, ?, ?, ?,?, ?, ?, ?)');
 
             $query->bindParam(1, $name, PDO::PARAM_STR);
             $query->bindParam(2, $description, PDO::PARAM_STR);
             $query->bindParam(3, $allergies, PDO::PARAM_STR);
             $query->bindParam(4, $servings, PDO::PARAM_STR);
             $query->bindParam(5, $photoPrincipal, PDO::PARAM_STR);
-            // $query->bindParam(6, $photo1, PDO::PARAM_STR);
-            // $query->bindParam(7, $photo2, PDO::PARAM_STR);
-            // $query->bindParam(8, $photo3, PDO::PARAM_STR);
+            $query->bindParam(6, $photo1, PDO::PARAM_STR);
+            $query->bindParam(7, $photo2, PDO::PARAM_STR);
+            $query->bindParam(8, $photo3, PDO::PARAM_STR);
+
             $query->execute();
             return "Producto agregado con éxito";
         } catch (PDOException $e) {

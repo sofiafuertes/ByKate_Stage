@@ -97,17 +97,17 @@ class Product
         $this->photo_principal = $photo;
     }
 
-    public function setPhoto1(string $photo): void
+    public function setPhoto1(?string $photo): void
     {
         $this->photo1 = $photo;
     }
 
-    public function setPhoto2(string $photo): void
+    public function setPhoto2(?string $photo): void
     {
         $this->photo2 = $photo;
     }
 
-    public function setPhoto3(string $photo): void
+    public function setPhoto3(?string $photo): void
     {
         $this->photo3 = $photo;
     }

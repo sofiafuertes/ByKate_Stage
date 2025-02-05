@@ -107,20 +107,30 @@ class ProductsControler
     public function addProduct()
     {
         if (isset($_POST['submitProduct'])) {
-            // var_dump($_POST);
+            // Validate and get form data
             $tab = $this->testFormAddProduct();
 
             if (is_string($tab)) {
                 $this->setMessage($tab);
-                return;
             } else {
 
+                //Handle the main photo upload
                 $main_photo_path = $this->handleImageUpload('main_photo');
 
                 if ($main_photo_path === false) {
-                    $this->setMessage('Hubo un problema al subir la imagen.');
-                    return;
+                    $this->setMessage('Hubo un problema al subir la imagen principal.');
                 }
+
+                // Handle extra images uploads. If no image is uploaded, set to null.
+                $extra_image1_path = isset($_FILES['extra_image1']) && $_FILES['extra_image1']['error'] === UPLOAD_ERR_OK
+                    ? $this->handleImageUpload('extra_image1')
+                    : null;
+                $extra_image2_path = isset($_FILES['extra_image2']) && $_FILES['extra_image2']['error'] === UPLOAD_ERR_OK
+                    ? $this->handleImageUpload('extra_image2')
+                    : null;
+                $extra_image3_path = isset($_FILES['extra_image3']) && $_FILES['extra_image3']['error'] === UPLOAD_ERR_OK
+                    ? $this->handleImageUpload('extra_image3')
+                    : null;
 
                 $newProduct = new Product();
                 $newProduct->setName_product($tab[0]);
@@ -128,64 +138,75 @@ class ProductsControler
                 $newProduct->setAllergies($tab[2]);
                 $newProduct->setServings($tab[3]);
                 $newProduct->setPhotoPrincipal($main_photo_path);
+                $newProduct->setPhoto1($extra_image1_path);
+                $newProduct->setPhoto2($extra_image2_path);
+                $newProduct->setPhoto3($extra_image3_path);
                 // var_dump($newProduct);
 
                 $productManager = new ProductManager;
-                $this->setMessage($productManager->addProduct($newProduct));
+                $result = $productManager->addProduct($newProduct);
+
+                if ($result === 'Producto agregado con éxito') {
+                    $this->setMessage('Producto agregado con éxito');
+                } else {
+                    $this->setMessage('Error al agregar el producto, intenta de nuevo.');
+                }
             }
         }
 
     }
 
 
-    public function updateProduct(){
-    if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['updateProduct'])) {
-        $id = intval($_POST['id_product']);
-        $name = $_POST['product_name'];
-        $description = $_POST['product_description'];
-        $allergies = $_POST['product_allergies'];
-        $servings = $_POST['product_servings'];
+    public function updateProduct()
+    {
+        if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['updateProduct'])) {
+            $id = intval($_POST['id_product']);
+            $name = $_POST['product_name'];
+            $description = $_POST['product_description'];
+            $allergies = $_POST['product_allergies'];
+            $servings = $_POST['product_servings'];
 
-        $product = new Product(
-            $id,
-            $name,
-            $description,
-            $allergies,
-            $servings
-        );
+            $product = new Product(
+                $id,
+                $name,
+                $description,
+                $allergies,
+                $servings
+            );
 
-        $result = $this->products->updateProduct($product);
+            $result = $this->products->updateProduct($product);
 
-        if ($result) {
-            // Redirige a la página de gestión con un mensaje de éxito
-            header('Location: /ByKate_Stage/gestion?message=Producto actualizado');
-            exit;
+            if ($result) {
+                // Redirige a la página de gestión con un mensaje de éxito
+                header('Location: /ByKate_Stage/gestion?message=Producto actualizado');
+                exit;
+            } else {
+                // Muestra un mensaje de error
+                echo "Error al actualizar el producto.";
+            }
         } else {
-            // Muestra un mensaje de error
-            echo "Error al actualizar el producto.";
+            echo "Método no permitido o datos incompletos.";
         }
-    } else {
-        echo "Método no permitido o datos incompletos.";
     }
-}
 
-public function deleteProduct(){
-    if(isset($_GET['id'])){
-        $id = intval($_GET['id']);
+    public function deleteProduct()
+    {
+        if (isset($_GET['id'])) {
+            $id = intval($_GET['id']);
 
-        $result = $this->products->deleteProductbyId($id);
+            $result = $this->products->deleteProductbyId($id);
 
-        if($result){
-            header('Location: /ByKate_Stage/gestion?message=Producto eliminado con éxito');
-            exit;
-        }else{
-            echo 'Error al eliminar el producto';
+            if ($result) {
+                header('Location: /ByKate_Stage/gestion?message=Producto eliminado con éxito');
+                exit;
+            } else {
+                echo 'Error al eliminar el producto';
+            }
+        } else {
+            echo 'ID del producto no proporcionado';
         }
-    }else{
-        echo 'ID del producto no proporcionado';
     }
+
+
 }
-
-
-    }
 
