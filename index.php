@@ -107,6 +107,20 @@ switch ($path) {
         $controller->updateProduct();
         break;
 
+    case $path === "/ByKate_Stage/gestion/updateText":
+        include './utils/functions.php';
+        include './model/textesWeb_model.php';
+        include './manager/textesWeb_manager.php';
+        include './controller/textesWeb_controller.php';
+
+        $controller = new TextesWeb_controller();
+        $success = $controller->updateText($_POST['page_path'], $_POST['section'], $_POST['new_content']);
+
+        // Incluimos nuevamente la vista de administración para mostrar el mensaje sin redireccionar
+        include './view/adminhome_view.php';
+        break;
+
+
     case $path === "/ByKate_Stage/gestion/delete":
         include './utils/functions.php';
         include './model/product_model.php';

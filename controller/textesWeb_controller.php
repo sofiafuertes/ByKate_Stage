@@ -38,7 +38,20 @@ class TextesWeb_controller
         }
 
         return $text['content'];
-
-
     }
+
+    public function updateText(?string $page_path, ?string $section, ?string $newContent){
+        if(empty($page_path) || empty ($section) || empty ($newContent)){
+            $this->setMessage('Todos los campos son obligatorios');
+            return false;
+        }
+
+        $success = $this->text->updateTextByPathSection($page_path, $section, $newContent);
+        if($success){
+            $this->setMessage('Texto actualizado con éxito');
+        }else{
+            $this->setMessage('Error al actualizar el texto');
+        }
+        return true;
+    } 
 }

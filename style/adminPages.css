@@ -1,3 +1,5 @@
+/* Conexion admin */
+
 .container {
     display: grid;
     grid-template-columns: repeat(8, 1fr);
@@ -24,7 +26,7 @@
     border: #67465B 1px solid;
     padding: 20px;
     font-family: 'Work-Sans';
-
+    
     input {
         font-size: 0.5em;
         border-radius: 3px;
@@ -32,6 +34,7 @@
     }
 }
 
+/* Buttons admin */
 .button {
     justify-self: center;
     align-self: center;
@@ -63,6 +66,54 @@
     color: red;
 }
 
+
+/* Admin 2nd Header */
+
+.titleMenu {
+    font-family: 'Work-Sans';
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+#adminHomePage ul {
+    margin: 0;
+    padding-left: 10px;
+}
+
+#adminHomePage ul label.title,
+#adminHomePage ul {
+    width: 100%;
+    color: #67465B;
+    font-family: 'Work-Sans';
+    display: block;
+}
+
+#adminHomePage ul label.title:hover {
+    color: #B58086;
+}
+
+#adminHomePage ul label {
+    height: 35px;
+}
+
+#adminHomePage ul li {
+    height: 35px;
+    overflow: hidden;
+    transition: all .3s;
+}
+
+
+input[type="radio"] {
+    display: none;
+}
+
+#product:checked+li,
+#recipe:checked+li,
+#passwordChange:checked+li {
+    height: 80px;
+}
+
+/* Admin Home  */
 
 #adminHomePage {
     .divButton {
@@ -112,7 +163,9 @@ table {
     font-family: 'Work-Sans';
     margin: 0 auto;
 }
-th, td {
+
+th,
+td {
     border: 1px solid #67465B;
     padding: 8px;
     text-align: left;
@@ -120,31 +173,35 @@ th, td {
     text-align: center;
 
 }
+
 th {
     background-color: #E4DDDF;
 
 }
-.oneProduct .nameProduct{
-    font-weight:bold ;
+
+.oneProduct .nameProduct {
+    font-weight: bold;
 }
+
 .oneProduct a {
     margin-right: 10px;
     color: #67465B;
 }
-.oneProduct a:hover{
-    color:#B58086;
+
+.oneProduct a:hover {
+    color: #B58086;
 }
 
-#updateProductForm{
-display: flex;
-flex-direction: row;
-align-items: center;
-gap: 15px;
+#updateProductForm {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 15px;
 }
 
 
 #adminHomePage .messageForm {
-    padding:5px;
+    padding: 5px;
     margin: 30px auto;
     text-align: center;
     font-family: 'Work-Sans';
@@ -153,24 +210,26 @@ gap: 15px;
     width: 25%;
 }
 
-.changePwd{
-    margin-top: 100px;
-        display: flex;
-        flex-direction: column;
-        
+.changePwd {
+    display: flex;
+    flex-direction: column;
+
+}
+
+#changePwdForm {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 20%;
+    gap: 8px;
+
+    p {
+        font-family: 'Work-Sans';
     }
-    #changePwdForm{
-        margin: 0 auto;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        width: 20%;
-        gap:8px;
-        p{
-            font-family: 'Work-Sans';
-        }
-    }
-#adminHomePage .messagepwd{
+}
+
+#adminHomePage .messagepwd {
     font-family: 'Work-Sans';
 
 }

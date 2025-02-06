@@ -55,4 +55,23 @@ document.addEventListener("DOMContentLoaded", () => {
             formRow.style.display = "none";
         });
     });
+
+
+    const showPswForm = document.getElementById("btnPassword");
+    const pswForm = document.getElementById("changePwd");
+
+
+    // Show/hide "Change Password" form
+    showPswForm.addEventListener("click", (e) => {
+        e.preventDefault();
+
+        if (
+            pswForm.style.display === "none" ||
+            pswForm.style.display === ""
+        ) {
+            pswForm.style.display = "block";
+        } else {
+            pswForm.style.display = "none";
+        }
+    });
 });

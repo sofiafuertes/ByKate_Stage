@@ -23,5 +23,20 @@ class TextesWeb_manager
             return null;
         }
     }
+    
+    public function updateTextByPathSection(?string $page_path, ?string $section, ?string $newContent):bool{
+        try{
+            $query = $this->db->prepare('UPDATE textes_web SET content = ? WHERE page_path = ? AND section = ?');
+            $query->bindValue(1,$newContent,PDO::PARAM_STR);
+            $query->bindValue(2,$page_path,PDO::PARAM_STR);
+            $query->bindValue(3,$section,PDO::PARAM_STR);
+            return $query->execute();
+        } catch (PDOException $e){
+            error_log('Error en la actualización: ' . $e->getMessage());
+            return false;
+        }
+    }
+
+
 
 }

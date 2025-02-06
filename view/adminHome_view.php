@@ -1,11 +1,31 @@
 <main id="adminHomePage">
-    <section class="gestionProducts">
-        <h1 class="titlePage">Productos</h1>
-        <div class="divButton">
-            <button id="btnProductList">Ver lista de productos</button>
-            <button id="btnNewProduct">Agregar nuevo producto</button>
-        </div>
+    
+        <nav class="menuAdmin">
+            <ul>
+                <p class="titleMenu">GESTIÓN</p>
+                <input type="radio" name="menu" id="product">
+                <li>
+                    <label for="product" class="title">Productos</label>
+                    <button id="btnProductList">Ver lista de productos</button>
+                    <button id="btnNewProduct">Agregar nuevo producto</button>
+                </li>
+                <input type="radio" name="menu" id="recipe">
+                <li>
+                    <label for="recipe" class="title">Recetas</label>
+                    <button>Ver lista de recetas</button>
+                    <button>Agregar receta</button>
+                </li>
+                <input type="radio" name="menu" id="passwordChange">
+                <li>
+                    <label for="passwordChange" class="title"></i>Contraseña</label>
+                    <button id="btnPassword">Cambiar contraseña</button>
+                </li>
+            </ul>
+        </nav>
+    
 
+
+    <section class="gestionProducts">
         <div id="productsList" style="display:none">
             <h2>Lista de productos</h2>
             <div class="productsAdmin">
@@ -35,8 +55,9 @@
                             </tr>
                             <tr class="edit-form" id="edit-form-<?= $product['id_product'] ?>" style="display: none;">
                                 <td colspan="5">
-                                <form id="updateProductForm_<?= $product['id_product'] ?>" method="POST" action="/ByKate_Stage/gestion/update">
-                                <input type="hidden" name="id_product" value="<?= $product['id_product'] ?>">
+                                    <form id="updateProductForm_<?= $product['id_product'] ?>" method="POST"
+                                        action="/ByKate_Stage/gestion/update">
+                                        <input type="hidden" name="id_product" value="<?= $product['id_product'] ?>">
                                         <label>Nombre: <input type="text" name="product_name"
                                                 value="<?= htmlspecialchars($product['product_name']) ?>"></label>
                                         <label>Descripción: <textarea
@@ -89,24 +110,44 @@
     </section>
 
     <section class="gestionRecipes">
-        <h1 class="titlePage">Recetas</h1>
-        <div class="divButton">
-            <button>Ver lista de recetas</button>
-            <button>Agregar receta</button>
-        </div>
     </section>
 
-    <section class="changePwd">
+    <section id="changePwd" style="display:none">
         <h1 class="titlePage">Cambiar contraseña</h1>
         <form id="changePwdForm" method="POST" action="/ByKate_Stage/gestion">
             <input type="password" name="old_password" placeholder="Contraseña actual" required>
             <input type="password" name="new_password" placeholder="Nueva contraseña" required>
             <input type="password" name="new_password_confirm" placeholder="Confirmar nueva contraseña" required>
-            <p class="messagePwd"><?php echo isset($loginController) ?  $loginController->getMessage() : ''; ?></p>
+            <p class="messagePwd"><?php echo isset($loginController) ? $loginController->getMessage() : ''; ?></p>
             <button class="button" type="submit" name="changePasswordSubmit">Cambiar contraseña</button>
-            </form>
+        </form>
     </section>
 
+<section class="gestionTextes">
+<h2>Editar Textos de la Página</h2>
 
+    <form id="editTextForm" method="POST" action="">
+        <label>Página:
+        <input type="text" name="page_path" placeholder="/ByKate_Stage/nombre_de_la_pagina" required>
+        </label>
+
+        <label>Sección:
+            <input type="text" name="section" placeholder="Ejemplo: header, footer, about" required>
+        </label>
+
+        <label>Contenido:
+            <textarea name="new_content" placeholder="Ingrese el nuevo contenido aquí..." required></textarea>
+        </label>
+
+        <button type="submit" name="updateText">Actualizar Texto</button>
+    </form>
+
+    <!--Show Message-->
+    <p class="messageForm">
+        <?php if (!empty($controller->getMessage())): ?>
+            <?= htmlspecialchars($controller->getMessage()) ?>
+        <?php endif; ?>
+    </p>
+</section>
 
 </main>
