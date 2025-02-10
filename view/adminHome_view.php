@@ -1,28 +1,33 @@
 <main id="adminHomePage">
-    
-        <nav class="menuAdmin">
-            <ul>
-                <p class="titleMenu">GESTIÓN</p>
-                <input type="radio" name="menu" id="product">
-                <li>
-                    <label for="product" class="title">Productos</label>
-                    <button id="btnProductList">Ver lista de productos</button>
-                    <button id="btnNewProduct">Agregar nuevo producto</button>
-                </li>
-                <input type="radio" name="menu" id="recipe">
-                <li>
-                    <label for="recipe" class="title">Recetas</label>
-                    <button>Ver lista de recetas</button>
-                    <button>Agregar receta</button>
-                </li>
-                <input type="radio" name="menu" id="passwordChange">
-                <li>
-                    <label for="passwordChange" class="title"></i>Contraseña</label>
-                    <button id="btnPassword">Cambiar contraseña</button>
-                </li>
-            </ul>
-        </nav>
-    
+
+    <nav class="menuAdmin">
+        <ul>
+            <p class="titleMenu">GESTIÓN</p>
+            <input type="radio" name="menu" id="product">
+            <li>
+                <label for="product" class="title">Productos</label>
+                <button id="btnProductList">Ver lista de productos</button>
+                <button id="btnNewProduct">Agregar nuevo producto</button>
+            </li>
+            <input type="radio" name="menu" id="recipe">
+            <li>
+                <label for="recipe" class="title">Recetas</label>
+                <button>Ver lista de recetas</button>
+                <button>Agregar receta</button>
+            </li>
+            <input type="radio" name="menu" id="passwordChange">
+            <li>
+                <label for="passwordChange" class="title"></i>Contraseña</label>
+                <button id="btnPassword">Cambiar contraseña</button>
+            </li>
+            <input type="radio" name="menu" id="textChange">
+            <li>
+                <label for="textChange" class="title">Textos</label>
+                <button id="btnText">Editar textos</button>
+            </li>
+        </ul>
+    </nav>
+
 
 
     <section class="gestionProducts">
@@ -105,7 +110,9 @@
                 <input class="button" type="submit" name="submitProduct" value="Agregar producto">
             </form>
         </div>
-        <p class="messageForm"><?php echo htmlspecialchars($addingProduct->getMessage()); ?></p>
+        <p class="messageForm"><?php if (isset($addingProduct)) : ?>
+        <?= htmlspecialchars($addingProduct->getMessage()); ?>
+    <?php endif; ?></p>
 
     </section>
 
@@ -123,31 +130,67 @@
         </form>
     </section>
 
-<section class="gestionTextes">
-<h2>Editar Textos de la Página</h2>
+    <section id="gestionTextes" style="display:none">
+        <h2>Editar textos de la página</h2>
 
-    <form id="editTextForm" method="POST" action="">
-        <label>Página:
-        <input type="text" name="page_path" placeholder="/ByKate_Stage/nombre_de_la_pagina" required>
-        </label>
+        <form id="editTextForm" method="POST" action="/ByKate_Stage/gestion/updateText">
+            <label>Path:
+                <input type="text" name="page_path" placeholder="/ByKate_Stage/path" required>
+            </label>
 
-        <label>Sección:
-            <input type="text" name="section" placeholder="Ejemplo: header, footer, about" required>
-        </label>
+            <label>Sección:
+                <input type="text" name="section" placeholder="storyShop, introContact3, ..." required>
+            </label>
 
-        <label>Contenido:
-            <textarea name="new_content" placeholder="Ingrese el nuevo contenido aquí..." required></textarea>
-        </label>
+            <label>Contenido:
+                <textarea name="new_content" placeholder="Nuevo contenido" required></textarea>
+            </label>
 
-        <button type="submit" name="updateText">Actualizar Texto</button>
-    </form>
+            <button class="button" type="submit" name="updateText">Modificar texto</button>
 
-    <!--Show Message-->
-    <p class="messageForm">
-        <?php if (!empty($controller->getMessage())): ?>
-            <?= htmlspecialchars($controller->getMessage()) ?>
-        <?php endif; ?>
-    </p>
-</section>
+        </form>
+
+        <!--Show Message-->
+        <p class="messageForm">
+            <?php if (!empty($textController->getMessage())): ?>
+                <?= htmlspecialchars($textController->getMessage()) ?>
+            <?php endif; ?>
+        </p>
+
+        <h2>Textos de la página:</h2>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Path</th>
+                    <th>Section</th>
+                    <th>Content</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php foreach ($texts as $text): ?>
+                    <tr>
+                        <td><?= htmlspecialchars($text['page_path']) ?></td>
+                        <td><?= htmlspecialchars($text['section']) ?></td>
+                        <td><?= htmlspecialchars($text['content']) ?></td>
+                    </tr>
+                <?php endforeach; ?>
+            </tbody>
+        </table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </section>
 
 </main>

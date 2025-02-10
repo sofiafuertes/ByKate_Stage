@@ -109,12 +109,12 @@ input[type="radio"] {
 
 #product:checked+li,
 #recipe:checked+li,
-#passwordChange:checked+li {
+#passwordChange:checked+li,
+#textChange:checked+li {
     height: 80px;
 }
 
 /* Admin Home  */
-
 #adminHomePage {
     .divButton {
         display: flex;
@@ -232,4 +232,20 @@ th {
 #adminHomePage .messagepwd {
     font-family: 'Work-Sans';
 
+}
+
+#editTextForm{
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    margin: 0 auto;
+    gap: 5px;
+
+    label {
+        font-family: 'Work-Sans';
+
+    }
+    input, textarea {
+        width: 100%;
+    }
 }

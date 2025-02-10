@@ -74,4 +74,25 @@ document.addEventListener("DOMContentLoaded", () => {
             pswForm.style.display = "none";
         }
     });
+
+
+
+    // Show/hide "Change Textes" form
+
+    const showTextForm = document.getElementById("btnText");
+    const textForm = document.getElementById("gestionTextes");
+
+
+    showTextForm.addEventListener("click", (e) => {
+        e.preventDefault();
+
+        if (
+            textForm.style.display === "none" ||
+            textForm.style.display === ""
+        ) {
+            textForm.style.display = "block";
+        } else {
+            textForm.style.display = "none";
+        }
+    });
 });

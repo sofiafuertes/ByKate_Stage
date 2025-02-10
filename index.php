@@ -61,10 +61,14 @@ switch ($path) {
 
     case $path === "/ByKate_Stage/nuestromenu":
         include './model/product_model.php';
+        include './model/textesWeb_model.php';
         include './manager/product_manager.php';
+        include './manager/textesWeb_manager.php';
         include './controller/products_controller.php';
+        include './controller/textesWeb_controller.php';
         $controller = new ProductsControler();
         $products = $controller->displayProducts();
+        $controller = new TextesWeb_controller();
         include './view/menu_view.php';
         break;
 
@@ -74,25 +78,36 @@ switch ($path) {
 
     case $path === "/ByKate_Stage/contacto":
         include './config/send_email.php';
+        include './model/textesWeb_model.php';
+        include './manager/textesWeb_manager.php';
+        include './controller/textesWeb_controller.php';
+        $controller = new TextesWeb_controller();
         include './view/contact_view.php';
         break;
 
     case $path === "/ByKate_Stage/gestion":
         include './utils/functions.php';
         include './model/product_model.php';
+        include './model/textesWeb_model.php';
         include './manager/product_manager.php';
         include './controller/products_controller.php';
         include './model/users_model.php';
         include './manager/users_manager.php';
+        include './manager/textesWeb_manager.php';
+        include './controller/textesWeb_controller.php';
         include './controller/login_controler.php';
 
         $addingProduct = new ProductsControler();
         $addingProduct->addProduct();
+
         $controller = new ProductsControler();
         $products = $controller->displayProducts();
-
+        
         $loginController = new Login_controler();
         $loginController->changePassword();
+        
+        $textController = new TextesWeb_controller();
+        $texts = $textController->getAllTextes();
 
         include './view/adminhome_view.php';
         break;
@@ -113,9 +128,11 @@ switch ($path) {
         include './manager/textesWeb_manager.php';
         include './controller/textesWeb_controller.php';
 
-        $controller = new TextesWeb_controller();
-        $success = $controller->updateText($_POST['page_path'], $_POST['section'], $_POST['new_content']);
+        $textController = new TextesWeb_controller();
+        $success = $textController->updateText($_POST['page_path'], $_POST['section'], $_POST['new_content']);
 
+        $texts = $textController->getAllTextes();
+ 
         // Incluimos nuevamente la vista de administración para mostrar el mensaje sin redireccionar
         include './view/adminhome_view.php';
         break;

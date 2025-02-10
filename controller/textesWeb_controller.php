@@ -52,6 +52,12 @@ class TextesWeb_controller
         }else{
             $this->setMessage('Error al actualizar el texto');
         }
-        return true;
+        return $success;
     } 
+
+    public function getAllTextes()
+{
+    return $this->text->readAllTextes();
+}
+
 }

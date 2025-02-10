@@ -1,9 +1,7 @@
 <main>
     <div class="containerText">
         <h1 class="titlePage">NUESTRO MENÚ</h1>
-        <p class="textPage">En esta página encontrarás los pasteles, tartas y diferentes productos que puedes pedir
-            por encargo.
-            Si quieres algún pastel personalizado o hacer un pedido especial para un evento, no dudes en contactarnos vía teléfono, email <br> o rellenando el formulario de contacto (click <a href="/ByKate_Stage/contacto"> aquí</a>).</p>
+        <p class="textPage"><?php echo $controller->displayText('/ByKate_Stage/nuestromenu', 'introMenu') ?> (click <a href="/ByKate_Stage/contacto"> aquí</a>).</p>
         <p class="textPage">Para ver el menú que encontrarás en nuestra tienda, click <a
                 href="https://drive.google.com/file/d/1RjpJ7kokre2Qq0veHm6EvYbCwXEs0hc-/view?usp=sharing"
                 target="_blank"> aquí</a></p>

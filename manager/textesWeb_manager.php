@@ -30,13 +30,34 @@ class TextesWeb_manager
             $query->bindValue(1,$newContent,PDO::PARAM_STR);
             $query->bindValue(2,$page_path,PDO::PARAM_STR);
             $query->bindValue(3,$section,PDO::PARAM_STR);
-            return $query->execute();
+
+            $success = $query->execute();
+            
+            
+            if (!$success) {
+                error_log("Error al ejecutar la consulta SQL: " . implode(", ", $query->errorInfo()));
+            }
+
+            return $success;
+            
         } catch (PDOException $e){
             error_log('Error en la actualización: ' . $e->getMessage());
             return false;
         }
     }
 
+    public function readAllTextes()
+    {
+        try {
+            $query = $this->db->prepare('SELECT page_path, section, content FROM textes_web');
+            $query->execute();
+            return $query->fetchAll(PDO::FETCH_ASSOC);
+        } catch (PDOException $e) {
+            error_log('Error en la consulta: ' . $e->getMessage());
+            return [];
+        }
+    }
+    
 
 
 }
