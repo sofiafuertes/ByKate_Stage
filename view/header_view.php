@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="style/menu.css">
     <link rel="stylesheet" href="style/contact.css">
     <link rel="stylesheet" href="style/aboutUs.css">
+    <link rel="stylesheet" href="style/recipes.css">
     <script src="javascript/header.js" defer></script>
     <script src="javascript/slide.js" defer></script>
     <script src="javascript/search.js" defer></script>

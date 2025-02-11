@@ -249,3 +249,22 @@ th {
         width: 100%;
     }
 }
+
+
+/* Form for adding recipes */
+#gestionRecipes{
+    width: 100%;
+}
+#addRecipeForm{
+    font-family: 'Work-Sans';
+    color: #67465B;
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin: 0 auto;
+    gap: 5px;
+
+    h2{
+        text-align: center;
+    }
+}

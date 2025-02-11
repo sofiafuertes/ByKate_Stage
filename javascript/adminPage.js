@@ -96,3 +96,34 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 });
+
+
+
+
+
+//Recipe
+ // Mostrar el formulario cuando se haga clic en el botón
+// document.getElementById('btnAddNewRecipe').addEventListener('click', function() {
+//     document.getElementById('addRecipeForm').style.display = 'block';
+// });
+
+// Añadir un ingrediente dinámicamente
+document.getElementById('addIngredientBtn').addEventListener('click', function() {
+    const ingredientsDiv = document.getElementById('ingredients');
+    const ingredientField = document.createElement('div');
+    ingredientField.innerHTML = `
+        <input type="text" name="ingredient_name[]" placeholder="Nombre del ingrediente" required>
+        <input type="text" name="ingredient_quantity[]" placeholder="Cantidad" required>
+    `;
+    ingredientsDiv.appendChild(ingredientField);
+});
+
+// Añadir un paso dinámicamente
+document.getElementById('addStepBtn').addEventListener('click', function() {
+    const stepsDiv = document.getElementById('steps');
+    const stepField = document.createElement('div');
+    stepField.innerHTML = `
+        <textarea name="step_description[]" placeholder="Descripción del paso" required></textarea>
+    `;
+    stepsDiv.appendChild(stepField);
+});

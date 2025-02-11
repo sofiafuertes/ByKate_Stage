@@ -1,0 +1,78 @@
+/* All recipes */
+.recipesPage .cards{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    gap: 15px;
+
+}
+
+
+
+/* Individual Recipe */
+#oneRecipe{
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    /* grid-template-rows:repeat(5, 1fr) ; */
+}
+
+.containerRecipe{
+    display: grid;
+    grid-column: 2/10;
+    grid-template-columns: repeat(8, 1fr);
+}
+
+.recipePhoto{
+    grid-column: 2/5;
+    width: 100%;
+    object-fit: cover;
+    img{
+        width:  100%;
+        border-radius: 3px;
+    }
+}
+
+.recipeDetails{
+    grid-column: 1/-1 ;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    font-family: 'Work-Sans';
+    margin-bottom: 18px;
+    
+}
+
+.recipeIngredients{
+    grid-column: 5/-1;
+    justify-self: left;
+    margin-left: 25px;
+    ul{
+        padding-left: 5px;
+    }
+    li{
+        list-style-type: none;
+        font-family:'Work-Sans' ;
+    }
+    h2{
+        margin-top: 0;
+    }
+}
+
+.recipeSteps{
+    grid-column: 2/-1;
+    li{
+        font-family: 'Work-Sans';
+    }
+}
+
+.recipeTips{
+    grid-column: 2/-1;
+    li{
+        font-family: 'Work-Sans';
+    }
+}
+
+
+
+
+

@@ -110,13 +110,69 @@
                 <input class="button" type="submit" name="submitProduct" value="Agregar producto">
             </form>
         </div>
-        <p class="messageForm"><?php if (isset($addingProduct)) : ?>
-        <?= htmlspecialchars($addingProduct->getMessage()); ?>
-    <?php endif; ?></p>
+        <p class="messageForm"><?php if (isset($addingProduct)): ?>
+                <?= htmlspecialchars($addingProduct->getMessage()); ?>
+            <?php endif; ?>
+        </p>
 
     </section>
 
-    <section class="gestionRecipes">
+    <section id="gestionRecipes">
+
+        <div id="addRecipeForm">
+            <h2>Agregar nueva receta</h2>
+            <form id="addRecipeForm" method="POST" enctype="multipart/form-data">
+
+                <label for="main_photo">Foto principal:</label>
+                <input type="file" name="main_photo" accept="image/*" required>
+
+                <label for="title">Título de la receta:</label>
+                <input type="text" name="title" placeholder="Título de la receta" required>
+
+                <label for="category">Categoria:</label>
+                <input type="text" name="category" placeholder="Categoria" required>
+
+                <label for="id_difficulty">Dificultad:</label>
+                <select name="id_difficulty" required>
+                    <option value="">Seleccione la dificultad</option>
+                    <?php foreach ($difficulties as $difficulty): ?>
+                        <option value="<?= htmlspecialchars($difficulty['id_difficulty_recipe']) ?>">
+                            <?= htmlspecialchars($difficulty['difficulty']) ?>
+                        </option>
+                    <?php endforeach; ?>
+                </select>
+
+                <label for="cooking_time">Tiempo de cocción:</label>
+                <input type="number" name="cooking_time" placeholder="Tiempo de cocción en minutos" required>
+
+                <!-- Ingredients -->
+                <div id="ingredients">
+                    <h3>Ingredientes</h3>
+                    <div class="ingredient">
+                        <input type="text" name="ingredient_name[]" placeholder="Nombre del ingrediente" required>
+                        <input type="text" name="ingredient_quantity[]" placeholder="Cantidad" required>
+                    </div>
+                </div>
+                <button type="button" id="addIngredientBtn">Agregar ingrediente</button>
+
+                <!-- Steps recipe -->
+                <div id="steps">
+                    <h3>Pasos</h3>
+                    <div class="step">
+                        <textarea name="step_description[]" placeholder="Descripción del paso 1" required></textarea>
+                    </div>
+                </div>
+                <button type="button" id="addStepBtn">Agregar paso</button>
+
+                <!-- Tips Recipe -->
+                <h3>Consejos</h3>
+                <textarea name="tips[]" placeholder="Consejos para esta receta"></textarea>
+
+                <button type="submit" name="submitRecipe">Agregar receta</button>
+            </form>
+        </div>
+
+
     </section>
 
     <section id="changePwd" style="display:none">

@@ -72,9 +72,6 @@ switch ($path) {
         include './view/menu_view.php';
         break;
 
-    case $path === "/ByKate_Stage/recetas":
-        include './view/recipes_view.php';
-        break;
 
     case $path === "/ByKate_Stage/contacto":
         include './config/send_email.php';
@@ -85,17 +82,44 @@ switch ($path) {
         include './view/contact_view.php';
         break;
 
+        case "/ByKate_Stage/recetas":
+            include './manager/recipe_manager.php';
+            include './controller/recipe_controller.php';
+        
+            $recipeController = new RecipeController();
+            $recipeController->showAllRecipes();
+
+            break;
+        
+            case (strpos($path, "/ByKate_Stage/receta") === 0):
+                include './manager/recipe_manager.php';
+                include './controller/recipe_controller.php';
+            
+                $recipeController = new RecipeController();
+                $recipeController->showRecipeDetails();
+
+                break;
+            
+        
+
     case $path === "/ByKate_Stage/gestion":
         include './utils/functions.php';
         include './model/product_model.php';
         include './model/textesWeb_model.php';
+        include './model/recipe_model.php';
         include './manager/product_manager.php';
+        include './manager/recipe_manager.php';
         include './controller/products_controller.php';
         include './model/users_model.php';
         include './manager/users_manager.php';
         include './manager/textesWeb_manager.php';
+        include './manager/recipe_difficulty_manager.php';
         include './controller/textesWeb_controller.php';
         include './controller/login_controler.php';
+        include './controller/recipe_controller.php';
+
+        $difficultyManager = new Recipe_difficulty();
+        $difficulties = $difficultyManager->getAllDifficulties();
 
         $addingProduct = new ProductsControler();
         $addingProduct->addProduct();
@@ -106,6 +130,9 @@ switch ($path) {
         $loginController = new Login_controler();
         $loginController->changePassword();
         
+        $recipeController = new RecipeController();
+        $recipeController->addRecipe();
+
         $textController = new TextesWeb_controller();
         $texts = $textController->getAllTextes();
 
@@ -147,6 +174,8 @@ switch ($path) {
         $controller = new ProductsControler();
         $controller->deleteProduct();
         break;
+
+
 
 
     case $path === "/ByKate_Stage/conexion":
