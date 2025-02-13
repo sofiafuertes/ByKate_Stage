@@ -6,23 +6,21 @@
         <h1>Nuestros Productos</h1>
         <div class="productsContainer">
             <div class="products">
-                <?php if (empty($products)): ?>
+                <?php if (empty($images)): ?>
                     <p>No hay productos registrados</p>
                 <?php else: ?>
-                    <?php foreach ($products as $product): ?>
-                        <div id="productCard" style="" class="productHome"
-                            data-name="<?= htmlspecialchars($product['product_name']) ?>">
-                            <a href="/ByKate_Stage/producto/<?= htmlspecialchars($product['id_product']) ?>">
-                                <img class="imgProduct" src="<?= htmlspecialchars($product['photo_principal_path']) ?>"
-                                    alt="<?= htmlspecialchars($product['product_name']) ?>">
+                    <?php foreach ($images as $image): ?>
+                        <div style="" class="imageProduct">
+                            <img src="<?= htmlspecialchars($image['photo_path']) ?>"
+                                alt="<?= htmlspecialchars($image['photo_path']) ?>">
                         </div>
                     <?php endforeach; ?>
                 <?php endif; ?>
             </div>
         </div>
-            <div class="divButton">
-                <button><a href="/ByKate_Stage/nuestromenu">Todos los productos</a></button>
-            </div>
+        <div class="divButton">
+            <button><a href="/ByKate_Stage/nuestrosproductos">Todos los productos</a></button>
+        </div>
     </section>
 
     <section class="sectionAboutUs">

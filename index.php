@@ -44,9 +44,14 @@ switch ($path) {
         include './controller/products_controller.php';
         include './controller/textesWeb_controller.php';
         $controller = new ProductsControler();
-        $limit = $_GET['limit'] ?? 4;
-        $products = $controller->displayProducts($limit);
         $controller = new TextesWeb_controller();
+
+        include './model/gallery_model.php';
+        include './manager/gallery_manager.php';
+        include './controller/gallery_controller.php';
+        $galleryController = new Gallery_controller();
+        $limit = 4;
+        $images = $galleryController->displayImages($limit);
 
         include './view/home_view.php';
         break;
@@ -78,6 +83,7 @@ switch ($path) {
         $galleryController = new Gallery_controller();
 
         $images = $galleryController->displayImages();
+        
 
         include './view/galleryproducts_view.php';
         break;

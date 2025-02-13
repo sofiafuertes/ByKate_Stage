@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="style/commun.css">
     <link rel="stylesheet" href="style/home.css">
     <link rel="stylesheet" href="style/adminPages.css">
-    <link rel="stylesheet" href="style/menu.css">
+    <link rel="stylesheet" href="style/photoGallery.css">
     <link rel="stylesheet" href="style/contact.css">
     <link rel="stylesheet" href="style/aboutUs.css">
     <link rel="stylesheet" href="style/recipes.css">

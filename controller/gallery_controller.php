@@ -1,10 +1,19 @@
 <?php
 
 class Gallery_controller{
-    public function displayImages(){
+
+
+
+
+    
+    public function displayImages($limit = null){
         $galleryManager = new GalleryManager();
 
         $images = $galleryManager->getAllImages();
+
+        if($limit !== null){
+            $images = array_slice($images, 0, $limit);
+        }
 
         return $images;
     }
