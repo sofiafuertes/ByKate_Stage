@@ -5,5 +5,5 @@
  * @return string
  */
 function sanitize($data){
-    return htmlentities(strip_tags(stripslashes(trim($data))));
+    return trim(stripslashes(strip_tags($data)));
 };

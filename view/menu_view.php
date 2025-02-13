@@ -1,4 +1,7 @@
 <main>
+
+
+
     <div class="containerText">
         <h1 class="titlePage">NUESTRO MENÚ</h1>
         <p class="textPage"><?php echo $controller->displayText('/ByKate_Stage/nuestromenu', 'introMenu') ?> (click <a
@@ -8,7 +11,7 @@
                 target="_blank"> aquí</a></p>
         <form class="searchField">
             <div class="containerSearch">
-                <input class="inputSearch" type="text" name="search" placeholder="Buscar...">
+                <input class="inputSearch inputSearchProduct" type="text" name="search" placeholder="Buscar...">
                 <i class="fa-solid fa-magnifying-glass iconSearch" style="color: #67465b;"></i>
             </div>
         </form>
@@ -26,7 +29,7 @@
                 <p>No hay productos registrados</p>
             <?php else: ?>
                 <?php foreach ($products as $product): ?>
-                    <div id="productCard" style="" class="oneCard"
+                    <div id="productCard" style="" class="oneCard product"
                         data-name="<?= htmlspecialchars($product['product_name']) ?>">
                         <a href="/ByKate_Stage/producto/<?= htmlspecialchars($product['id_product']) ?>">
                             <img src="<?= htmlspecialchars($product['photo_principal_path']) ?>"

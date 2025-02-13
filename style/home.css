@@ -19,9 +19,6 @@
 .productsSection {
     background-color: #e4dddfb3;
     display: grid;
-    grid-template-columns: repeat(8, 1fr);
-    grid-template-rows: 1fr, 1fr, 1fr;
-    width: 100%;
     margin-top: 50px;
     padding-bottom: 18px;
 
@@ -36,11 +33,15 @@
     font-family: 'Work-Sans';
 }
 
-.productsContainer {
-    grid-column: 1 / -1;
-    grid-row: 2;
+.products{
     display: flex;
     flex-direction: row;
+    gap: 15px;
+}
+
+.productsContainer {
+    grid-column: 1 / -1;
+    display: flex;
     justify-content: center;
     margin-bottom: 18px;
 
@@ -123,6 +124,9 @@
     }
 
     /* Products */
+    .products{
+        flex-direction: column;
+    }
     .imgProduct img {
         width: 300px;
         height: 400px;

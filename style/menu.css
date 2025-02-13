@@ -1,29 +1,31 @@
-/* Products */
-.containerText {
+/* Products Gallery Photos */
+.gallery-container {
     display: grid;
-    grid-template-columns: repeat(8, 1fr);
-    grid-template-rows: 1fr, 2fr;
-
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+    padding: 20px;
 }
 
-.titlePage {
-    grid-column: 2/8;
-    text-align: center;
-    font-family: 'Nixie-One';
-    color: #67465B;
+.gallery-item img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    transition: transform 0.3s ease-in-out;
+    border-radius: 8px;
 }
 
-.textPage {
-    grid-column: 2/8;
-    text-align: center;
-    font-family: 'Work-Sans';
-    color: #67465B;
-    font-size: 1.1rem;
-
-    a {
-        color: #67465B;
-    }
+.gallery-item img:hover {
+    transform: scale(1.5);
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
 }
+
+
+
+
+
+
+
+/* Products */
 
 .containerCards {
     display: flex;
@@ -76,7 +78,7 @@
     margin: 5px;
 }
 
-/* Search field */
+Search field
 .searchField {
     margin: 20px;
     /* display: grid;
@@ -226,18 +228,6 @@ h2 {
 }
 
 @media (max-width: 768px) {
-    .containerText {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-    }
-
-    .textPage {
-        font-size: 1rem;
-        margin-left: 5px;
-        margin-right: 5px;
-    }
-
     .containerCards {
         display: grid;
         margin: 0 auto;

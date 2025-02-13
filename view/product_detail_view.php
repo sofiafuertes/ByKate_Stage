@@ -1,6 +1,6 @@
 <main>
     <div class="breadcrumb">
-    <a  href="/ByKate_Stage/nuestromenu">< menú - <?= htmlspecialchars($product['product_name']) ?></a>
+    <a  href="/ByKate_Stage/nuestromenu">< Menú - <?= htmlspecialchars($product['product_name']) ?></a>
     </div>
     <section>
         <div class="containerDetailProduct">

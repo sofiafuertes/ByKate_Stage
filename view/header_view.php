@@ -31,7 +31,7 @@
                 <div class="navbar">
                     <div class="navPages">
                         <a href="/ByKate_Stage/quienessomos">¿QUIÉNES SOMOS?</a>
-                        <a href="/ByKate_Stage/nuestromenu">NUESTRO MENÚ</a>
+                        <a href="/ByKate_Stage/nuestrosproductos">NUESTRO MENÚ</a>
                         <a href="/ByKate_Stage/recetas">RECETAS</a>
                         <a href="/ByKate_Stage/contacto">CONTACTO</a>
                         <a class="<?php echo $header->getclassConnexion() ?>" href="/ByKate_Stage/gestion">GESTIÓN</a>

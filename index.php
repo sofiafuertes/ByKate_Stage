@@ -20,18 +20,18 @@ $path = isset($url['path']) ? $url['path'] : '/';
 
 /*--------------------------ROUTER -----------------------------*/
 
-//test de la valeur $path dans l'URL et import de la ressource
-if (preg_match('/^\/ByKate_Stage\/producto\/(\d+)$/', $path, $matches)) {
-    // If the path corresponds to /ByKate_Stage/product/{id}
-    $id_product = $matches[1]; // Capture the product ID from the URL
-    include './model/product_model.php'; // Include the product model
-    include './manager/product_manager.php'; // Include the product manager
-    include './controller/products_controller.php'; // Include the products controller
-    $controller = new ProductsControler(); // Create a new instance of the controller
-    $controller->displayProduct($id_product); // Call the method to display the product details
-    include './view/footer_view.php';
-    exit; // Stop further script execution, as the product page is already loaded
-}
+// //test de la valeur $path dans l'URL et import de la ressource
+// if (preg_match('/^\/ByKate_Stage\/producto\/(\d+)$/', $path, $matches)) {
+//     // If the path corresponds to /ByKate_Stage/product/{id}
+//     $id_product = $matches[1]; // Capture the product ID from the URL
+//     include './model/product_model.php'; // Include the product model
+//     include './manager/product_manager.php'; // Include the product manager
+//     include './controller/products_controller.php'; // Include the products controller
+//     $controller = new ProductsControler(); // Create a new instance of the controller
+//     $controller->displayProduct($id_product); // Call the method to display the product details
+//     include './view/footer_view.php';
+//     exit; // Stop further script execution, as the product page is already loaded
+// }
 
 
 switch ($path) {
@@ -59,17 +59,27 @@ switch ($path) {
         include './view/aboutUs_view.php';
         break;
 
-    case $path === "/ByKate_Stage/nuestromenu":
-        include './model/product_model.php';
+    case $path === "/ByKate_Stage/nuestrosproductos":
+        // include './model/product_model.php';
+        // include './manager/product_manager.php';
+        // include './controller/products_controller.php';
+        // $controller = new ProductsControler();
+        // $products = $controller->displayProducts();
+        // include './view/menu_view.php';
+
         include './model/textesWeb_model.php';
-        include './manager/product_manager.php';
         include './manager/textesWeb_manager.php';
-        include './controller/products_controller.php';
         include './controller/textesWeb_controller.php';
-        $controller = new ProductsControler();
-        $products = $controller->displayProducts();
-        $controller = new TextesWeb_controller();
-        include './view/menu_view.php';
+        $textController = new TextesWeb_controller();
+
+        include './model/gallery_model.php';
+        include './manager/gallery_manager.php';
+        include './controller/gallery_controller.php';
+        $galleryController = new Gallery_controller();
+
+        $images = $galleryController->displayImages();
+
+        include './view/galleryproducts_view.php';
         break;
 
 
@@ -82,34 +92,34 @@ switch ($path) {
         include './view/contact_view.php';
         break;
 
-        case "/ByKate_Stage/recetas":
-            include './manager/recipe_manager.php';
-            include './controller/recipe_controller.php';
-        
-            $recipeController = new RecipeController();
-            $recipeController->showAllRecipes();
+    case "/ByKate_Stage/recetas":
+        include './manager/recipe_manager.php';
+        include './controller/recipe_controller.php';
 
-            break;
-        
-            case (strpos($path, "/ByKate_Stage/receta") === 0):
-                include './manager/recipe_manager.php';
-                include './controller/recipe_controller.php';
-            
-                $recipeController = new RecipeController();
-                $recipeController->showRecipeDetails();
+        $recipeController = new RecipeController();
+        $recipeController->showAllRecipes();
 
-                break;
-            
-        
+        break;
+
+    case (strpos($path, "/ByKate_Stage/receta") === 0):
+        include './manager/recipe_manager.php';
+        include './controller/recipe_controller.php';
+
+        $recipeController = new RecipeController();
+        $recipeController->showRecipeDetails();
+
+        break;
+
+
 
     case $path === "/ByKate_Stage/gestion":
         include './utils/functions.php';
-        include './model/product_model.php';
+        // include './model/product_model.php';
+        // include './manager/product_manager.php';
+        // include './controller/products_controller.php';
         include './model/textesWeb_model.php';
         include './model/recipe_model.php';
-        include './manager/product_manager.php';
         include './manager/recipe_manager.php';
-        include './controller/products_controller.php';
         include './model/users_model.php';
         include './manager/users_manager.php';
         include './manager/textesWeb_manager.php';
@@ -121,15 +131,15 @@ switch ($path) {
         $difficultyManager = new Recipe_difficulty();
         $difficulties = $difficultyManager->getAllDifficulties();
 
-        $addingProduct = new ProductsControler();
-        $addingProduct->addProduct();
+        // $addingProduct = new ProductsControler();
+        // $addingProduct->addProduct();
 
-        $controller = new ProductsControler();
-        $products = $controller->displayProducts();
-        
+        // $controller = new ProductsControler();
+        // $products = $controller->displayProducts();
+
         $loginController = new Login_controler();
         $loginController->changePassword();
-        
+
         $recipeController = new RecipeController();
         $recipeController->addRecipe();
 
@@ -139,15 +149,15 @@ switch ($path) {
         include './view/adminhome_view.php';
         break;
 
-    case $path === "/ByKate_Stage/gestion/update":
-        include './utils/functions.php';
-        include './model/product_model.php';
-        include './manager/product_manager.php';
-        include './controller/products_controller.php';
+    // case $path === "/ByKate_Stage/gestion/update":
+    //     include './utils/functions.php';
+    //     include './model/product_model.php';
+    //     include './manager/product_manager.php';
+    //     include './controller/products_controller.php';
 
-        $controller = new ProductsControler();
-        $controller->updateProduct();
-        break;
+    //     $controller = new ProductsControler();
+    //     $controller->updateProduct();
+    //     break;
 
     case $path === "/ByKate_Stage/gestion/updateText":
         include './utils/functions.php';
@@ -159,21 +169,28 @@ switch ($path) {
         $success = $textController->updateText($_POST['page_path'], $_POST['section'], $_POST['new_content']);
 
         $texts = $textController->getAllTextes();
- 
-        // Incluimos nuevamente la vista de administración para mostrar el mensaje sin redireccionar
+
         include './view/adminhome_view.php';
         break;
 
+        case $path === "/ByKate_Stage/gestion/upload_photo":
+            include './manager/gallery_manager.php';
+            include './controller/gallery_controller.php';
+        
+            $galleryController = new Gallery_controller();
+            $galleryController->uploadImage();
+            break;
+        
 
-    case $path === "/ByKate_Stage/gestion/delete":
-        include './utils/functions.php';
-        include './model/product_model.php';
-        include './manager/product_manager.php';
-        include './controller/products_controller.php';
+    // case $path === "/ByKate_Stage/gestion/delete":
+    //     include './utils/functions.php';
+    //     include './model/product_model.php';
+    //     include './manager/product_manager.php';
+    //     include './controller/products_controller.php';
 
-        $controller = new ProductsControler();
-        $controller->deleteProduct();
-        break;
+    //     $controller = new ProductsControler();
+    //     $controller->deleteProduct();
+    //     break;
 
 
 

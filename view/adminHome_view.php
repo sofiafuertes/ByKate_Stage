@@ -12,8 +12,8 @@
             <input type="radio" name="menu" id="recipe">
             <li>
                 <label for="recipe" class="title">Recetas</label>
-                <button>Ver lista de recetas</button>
-                <button>Agregar receta</button>
+                <button id="btnRecipeList">Ver lista de recetas</button>
+                <button id="btnNewRecipe">Agregar receta</button>
             </li>
             <input type="radio" name="menu" id="passwordChange">
             <li>
@@ -28,10 +28,25 @@
         </ul>
     </nav>
 
+    <form action="/ByKate_Stage/gestion/upload_photo" id="uploadForm" method="POST" enctype="multipart/form-data">
+    <label for="photo">Subir Imagen:</label>
+    <input type="file" name="photo" id="photo" accept="image/*" required>
+
+    <label for="section">Sección:</label>
+    <input type="text" name="section" id="section" placeholder="Ejemplo: Menu" required>
+
+    <button type="submit">Subir Imagen</button>
+</form>
+<div id="responseMessage"></div>
+
+
+
+
 
 
     <section class="gestionProducts">
-        <div id="productsList" style="display:none">
+    
+    <div id="productsList" style="display:none">
             <h2>Lista de productos</h2>
             <div class="productsAdmin">
                 <?php if (empty($products)): ?>
@@ -119,7 +134,7 @@
 
     <section id="gestionRecipes">
 
-        <div id="addRecipeForm">
+        <div id="addRecipeForm" style="display:none">
             <h2>Agregar nueva receta</h2>
             <form id="addRecipeForm" method="POST" enctype="multipart/form-data">
 
@@ -165,8 +180,13 @@
                 <button type="button" id="addStepBtn">Agregar paso</button>
 
                 <!-- Tips Recipe -->
-                <h3>Consejos</h3>
-                <textarea name="tips[]" placeholder="Consejos para esta receta"></textarea>
+                <div id="tips">
+                    <h3>Consejos</h3>
+                    <div class="tip">
+                        <textarea name="tips[]" placeholder="Consejo 1"></textarea>
+                    </div>
+                </div>
+                <button type="button" id="addTipBtn">Agregar consejo</button>
 
                 <button type="submit" name="submitRecipe">Agregar receta</button>
             </form>

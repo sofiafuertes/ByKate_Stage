@@ -53,25 +53,21 @@ class AutomaticSlider {
     }
 }
 
-// Crear el carrusel para la primera página
-new AutomaticSlider("#automaticSlide", [
-    "./photos/slide_img/imgSlide1.jpg",
-    "./photos/slide_img/imgSlide2.JPG",
-    "./photos/slide_img/imgSlide3.jpg",
-    "./photos/slide_img/imgSlide4.jpg",
-]);
+const sliderContainer = document.querySelector("#automaticSlide");
+if (sliderContainer) {
+    new AutomaticSlider("#automaticSlide", [
+        "./photos/slide_img/imgSlide1.jpg",
+        "./photos/slide_img/imgSlide2.JPG",
+        "./photos/slide_img/imgSlide3.jpg",
+        "./photos/slide_img/imgSlide4.jpg",
+    ]);
+}
 
-// // Crear el carrusel para la segunda página
-// new AutomaticSlider("#automaticSlideAboutUs", [
-//     "./photos/slide_img/imgSlide5.jpg",
-//     "./photos/slide_img/imgSlide6.JPG",
-//     "./photos/slide_img/imgSlide7.jpg",
-//     "./photos/slide_img/imgSlide8.jpg",
-//     "./photos/slide_img/imgSlide9.jpg",
-//     "./photos/slide_img/imgSlide10.JPG",
-//     "./photos/slide_img/imgSlide11.jpg",
-// ]);
 
+// Slider About Us
+const slider = document.querySelector("#automaticSlideAboutUs");
+
+if(slider) {
 
 const imagesAboutUs = ["./photos/slide_img/imgSlide5.jpg",
     "./photos/slide_img/imgSlide6.JPG",
@@ -82,7 +78,6 @@ const imagesAboutUs = ["./photos/slide_img/imgSlide5.jpg",
     "./photos/slide_img/imgSlide11.jpg",]
 
 
-const slider = document.querySelector("#automaticSlideAboutUs");
 
 imagesAboutUs.forEach((imageSrc) => {
     const img = document.createElement('img');
@@ -107,3 +102,4 @@ function startAutoScroll() {
 
 // Iniciar el desplazamiento automático
 startAutoScroll();
+}

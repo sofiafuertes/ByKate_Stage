@@ -363,3 +363,53 @@ footer {
         
     }
 }
+
+
+
+
+
+
+
+/* Textes */
+
+
+.containerText {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: 1fr, 2fr;
+
+}
+
+.titlePage {
+    grid-column: 2/8;
+    text-align: center;
+    font-family: 'Nixie-One';
+    color: #67465B;
+}
+
+.textPage {
+    grid-column: 2/8;
+    text-align: center;
+    font-family: 'Work-Sans';
+    color: #67465B;
+    font-size: 1.1rem;
+
+    a {
+        color: #67465B;
+    }
+}
+
+@media (max-width: 768px) {
+    .containerText {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .textPage {
+        font-size: 1rem;
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+
+}
