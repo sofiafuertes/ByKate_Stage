@@ -30,5 +30,22 @@ class GalleryManager{
             error_log("Error al guardar la imagen: " . $e->getMessage());
         }
     }
+
+    public function deleteImageByPath(string $photoPath) {
+        try {
+            // Eliminar el archivo físicamente
+            if (file_exists($photoPath)) {
+                unlink($photoPath);  // Borra el archivo
+            }
+    
+            // Eliminar la entrada de la base de datos
+            $query = $this->db->prepare("DELETE FROM photos_web WHERE photo_path = :photo_path");
+            $query->bindParam(':photo_path', $photoPath);
+            $query->execute();
+        } catch (PDOException $e) {
+            error_log("Error al eliminar la imagen: " . $e->getMessage());
+        }
+    }
+    
     
 }

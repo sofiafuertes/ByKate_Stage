@@ -268,3 +268,44 @@ th {
         text-align: center;
     }
 }
+
+
+
+/* Gestion for images */
+
+
+#uploadForm{
+    font-family: 'Work-Sans';
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+    margin: 5px auto;
+
+    button{
+        margin-top: 10px;
+    }
+
+}
+#gestion-delete-photo{
+    display: grid;
+    grid-template-columns: repeat(8,1fr);
+    
+}
+.container-photo-delete{
+    grid-column: 2/8;
+    display: flex;
+    flex-wrap: wrap;
+    gap:30px;
+    row-gap: 30px;
+}
+.deleteImage{
+    display: flex;
+    flex-direction: column;    
+    a{
+        font-family: 'Work-Sans';
+        color: #67465B;
+        text-align: center;
+
+    }
+} 
+

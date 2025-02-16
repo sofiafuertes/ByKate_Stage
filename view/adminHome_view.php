@@ -6,8 +6,9 @@
             <input type="radio" name="menu" id="product">
             <li>
                 <label for="product" class="title">Productos</label>
-                <button id="btnProductList">Ver lista de productos</button>
-                <button id="btnNewProduct">Agregar nuevo producto</button>
+                <button id="btnPhotoGallery">Galería de Fotos </button>
+                <!-- <button id="btnProductList">Ver lista de productos</button>
+                <button id="btnNewProduct">Agregar nuevo producto</button> -->
             </li>
             <input type="radio" name="menu" id="recipe">
             <li>
@@ -28,25 +29,44 @@
         </ul>
     </nav>
 
-    <form action="/ByKate_Stage/gestion/upload_photo" id="uploadForm" method="POST" enctype="multipart/form-data">
-    <label for="photo">Subir Imagen:</label>
-    <input type="file" name="photo" id="photo" accept="image/*" required>
+    <section id="gestionImages" style="display : none">
+        <div>
+            <form action="/ByKate_Stage/gestion/upload_photo" id="uploadForm" method="POST" enctype="multipart/form-data">
+                <label for="photo">Subir Imagen:</label>
+                <input type="file" name="photo" id="photo" accept="image/*" required>
 
-    <label for="section">Sección:</label>
-    <input type="text" name="section" id="section" placeholder="Ejemplo: Menu" required>
+                <label for="section">Sección:</label>
+                <input type="text" name="section" id="section" placeholder="Ejemplo: Menu" required>
 
-    <button type="submit">Subir Imagen</button>
-</form>
-<div id="responseMessage"></div>
+                <button class="button" type="submit">Subir Imagen</button>
+            </form>
+            <div id="responseMessage"></div>
+        </div>
 
+        <div id="gestion-delete-photo">
+            <div class="titlePage">
+                <h2>Fotos de la Galería</h2>
+            </div>
 
+            <div class="container-photo-delete">
+                <?php foreach ($images as $image): ?>
+                    <div class="deleteImage">
+                        <img src="<?= htmlspecialchars($image['photo_path']) ?>" alt="Imagen" width="150">
 
-
+                        <a href="/ByKate_Stage/gestion/delete_photo?photo_path=<?= urlencode($image['photo_path']) ?>"
+                            onclick="return confirm('¿Estás seguro de que deseas eliminar esta imagen?')">
+                            Eliminar
+                        </a>
+                    </div>
+                <?php endforeach; ?>
+            </div>
+        </div>
+    </section>
 
 
     <section class="gestionProducts">
-    
-    <div id="productsList" style="display:none">
+
+        <div id="productsList" style="display:none">
             <h2>Lista de productos</h2>
             <div class="productsAdmin">
                 <?php if (empty($products)): ?>

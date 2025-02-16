@@ -152,8 +152,33 @@ switch ($path) {
         $textController = new TextesWeb_controller();
         $texts = $textController->getAllTextes();
 
+        include './model/gallery_model.php';
+        include './manager/gallery_manager.php';
+        include './controller/gallery_controller.php';
+        $galleryController = new Gallery_controller();
+        $images = $galleryController->displayImagesTable();
+
         include './view/adminhome_view.php';
         break;
+
+        case $path === "/ByKate_Stage/gestion/delete_photo":
+            include './manager/gallery_manager.php';
+            include './controller/gallery_controller.php';
+        
+            if (isset($_GET['photo_path'])) {  // Verificar si el parámetro está presente
+                $photoPath = $_GET['photo_path'];
+                $galleryController = new Gallery_controller();
+                $galleryController->deleteImage($photoPath);  // Llamar a la función de eliminación
+        
+                // Redirigir después de la eliminación para evitar eliminar la misma imagen al recargar
+                header('Location: /ByKate_Stage/gestion');
+                exit;
+            } else {
+                echo "Ruta de la imagen no proporcionada.";
+            }
+            break;
+        
+        
 
     // case $path === "/ByKate_Stage/gestion/update":
     //     include './utils/functions.php';

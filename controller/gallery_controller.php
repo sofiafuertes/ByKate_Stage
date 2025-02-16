@@ -46,7 +46,17 @@ class Gallery_controller{
                 }
             }
         }
-    
+        public function displayImagesTable() {
+            $galleryManager = new GalleryManager();
+            $images = $galleryManager->getAllImages();  // Obtener todas las imágenes desde la base de datos
+            return $images;
+        }
+        
+        public function deleteImage($photoPath) {
+            $galleryManager = new GalleryManager();
+            $galleryManager->deleteImageByPath($photoPath);  // Elimina la imagen
+        }
+        
     
 
 }

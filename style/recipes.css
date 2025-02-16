@@ -1,12 +1,5 @@
 /* Search field */
 
-
-.containerSearch {
-    position: relative;
-    width: 100%;
-
-}
-
 .inputSearch {
     padding: 10px 35px 10px 10px;
     font-family: 'work-sans';
@@ -24,13 +17,12 @@
     transform: translateY(-50%);
     pointer-events: none;
 }
-.searchField{
-    grid-column: 7/8;
-    margin: 20px 0 ;
-    .containerSearch{
-        width: 100%;
-        justify-self: right;
-    }
+
+
+.containerSearch{
+    grid-column: 2/3;
+    position: relative;
+    /* margin: 20px 0 ;     */
 }
 
 
@@ -40,53 +32,44 @@
     display: grid;
     grid-template-columns: repeat(8, 1fr);
     grid-gap: 15px;
-    margin: 20px 0;
 }
 
 #recipesPage .titlePage{
-    grid-column: 2/8;
+    margin-bottom: 10px;
     font-size: 2em;
 }
 #recipeCard img{
     object-fit: cover;
 }
-
 h2{
     font-family: 'Nixie-One';
     color: #67465B;
 }
 
-
 .containerCards {
-    grid-column: 2/8;
+    grid-column:2/8;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+    gap: 20px;
     font-family: 'Work-Sans';
     color: #67465B;
 }
 
-.cards {
-    display: flex;
-    flex-direction: row;
-    gap: 10px;
-}
-
 .oneCard {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
+    width: 30%;
     border-radius: 3px;
     background-color: #e4dddf;
     filter: drop-shadow(1px 4px 2px #B58086);
-
     a {
         text-decoration: none;
         color: #67465B;
     }
 }
-
 .oneCard img {
     width: 100%;
     border-radius: 3px;
-    height: 400px;
+    height: 300px;
     object-fit: fill;
     object-position: center;
 }
@@ -101,7 +84,7 @@ h2{
 .oneCard p {
     text-align: left;
     margin: 5px;
-}
+} 
 
 
 

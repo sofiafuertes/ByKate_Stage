@@ -1,14 +1,14 @@
 <main id="recipesPage">
     <section class="pageContainer">
         <h1 class="titlePage">RECETAS</h1>
+        <div class="containerSearch">
         <form class="searchField">
-            <div class="containerSearch">
                 <input class="inputSearch inputSearchRecipe" type="text" name="search" placeholder="Buscar...">
                 <i class="fa-solid fa-magnifying-glass iconSearch" style="color: #67465b;"></i>
+            </form>
             </div>
-        </form>
         <section class="containerCards">
-            <div class="cards">
+            <!-- <div class="cards"> -->
                 <?php if (!empty($recipes)): ?>
                     <?php foreach ($recipes as $recipe): ?>
                         <div id="recipeCard" style="" class="oneCard recipe"
@@ -33,7 +33,7 @@
                 <?php else: ?>
                     <p>No hay recetas disponibles.</p>
                 <?php endif; ?>
-            </div>
+            <!-- </div> -->
         </section>
     </section>
 </main>
