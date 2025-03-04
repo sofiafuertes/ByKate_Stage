@@ -72,7 +72,7 @@ class RecipeManager
     //Method to read a recipe by id
     public function getRecipeById($id)
     {
-        // Obtener datos principales de la receta
+        // Get recipe data
         $query = $this->db->prepare('
         SELECT 
             r.id_recipe, 
@@ -93,7 +93,7 @@ class RecipeManager
             return null;
         }
 
-        // Obtener ingredientes de la receta
+        // Get recipe ingredients
         $query = $this->db->prepare('
         SELECT 
             i.ingredient_name, 
@@ -105,7 +105,7 @@ class RecipeManager
         $query->execute([$id]);
         $recipe['ingredients'] = $query->fetchAll(PDO::FETCH_ASSOC);
 
-        // Obtener pasos de la receta
+        // Get recipe steps
         $query = $this->db->prepare('
         SELECT 
             step_number, 
@@ -117,7 +117,7 @@ class RecipeManager
         $query->execute([$id]);
         $recipe['steps'] = $query->fetchAll(PDO::FETCH_ASSOC);
 
-        // Obtener consejos/tips de la receta
+        // Get recipe tips
         $query = $this->db->prepare('
         SELECT 
             content_tip 

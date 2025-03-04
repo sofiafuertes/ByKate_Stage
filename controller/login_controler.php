@@ -11,7 +11,7 @@ class Login_controler
     public function setMessage(?string $message)
     {
         $this->message = $message;
-        
+
     }
     public function getMessage(): ?string
     {
@@ -70,44 +70,46 @@ class Login_controler
         }
     }
 
-public function changePassword(){
-    if(isset($_POST['changePasswordSubmit'])){
-        if(empty($_POST['old_password']) || empty($_POST['new_password']) || empty($_POST['new_password_confirm'])){
-            $this->setMessage('Llene todos los campos, por favor.');
-            return;
-        }
-        $currentPassword = sanitize($_POST['old_password']);
-        $newPassword = sanitize($_POST['new_password']);
-        $confirmPassword = sanitize($_POST['new_password_confirm']);
+    public function changePassword()
+    {
+        if (isset($_POST['changePasswordSubmit'])) {
+            if (empty($_POST['old_password']) || empty($_POST['new_password']) || empty($_POST['new_password_confirm'])) {
+                $this->setMessage('Llene todos los campos, por favor.');
+                return;
+            }
+            $currentPassword = sanitize($_POST['old_password']);
+            $newPassword = sanitize($_POST['new_password']);
+            $confirmPassword = sanitize($_POST['new_password_confirm']);
 
-        if($newPassword !== $confirmPassword){
-            $this->setMessage('Las contraseñas no coinciden');
-            return;
-        }
+            if ($newPassword !== $confirmPassword) {
+                $this->setMessage('Las contraseñas no coinciden');
+                return;
+            }
 
-        if (!preg_match('/^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/', $newPassword)) {
-            $this->setMessage('La contraseña debe tener al menos 8 caracteres, incluyendo una mayúscula, una minúscula, un número y un carácter especial.');
-            return;
-        }
-        
+            if (!preg_match('/^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/', $newPassword)) {
+                $this->setMessage('La contraseña debe tener al menos 8 caracteres, incluyendo una mayúscula, una minúscula, un número y un carácter especial.');
+                return;
+            }
 
-        if (!isset($_SESSION['login'])) {
-            $this->setMessage('No tienes permiso para cambiar la contraseña');
-            return;
-        }
 
-        $usersManager = new Users_manager();
-        $user = $usersManager->readUserByMail($_SESSION['login']);
+            if (!isset($_SESSION['login'])) {
+                $this->setMessage('No tienes permiso para cambiar la contraseña');
+                return;
+            }
 
-        if(!$user || !password_verify($currentPassword, $user['pwd_user'])){
-            $this->setMessage('La contraseña actual no es correcta');
-            return;
+            $usersManager = new Users_manager();
+            $user = $usersManager->readUserByMail($_SESSION['login']);
+
+            if (!$user || !password_verify($currentPassword, $user['pwd_user'])) {
+                $this->setMessage('La contraseña actual no es correcta');
+                return;
+            }
+            if ($usersManager->updatePassword($_SESSION['login'], $newPassword)) {
+                $this->setMessage('La contraseña ha sido cambiada con exito');
+            } else {
+                $this->setMessage('Error al cambiar la contraseña');
+            }
         }
-        if($usersManager->updatePassword($_SESSION['login'], $newPassword)){
-            $this->setMessage('La contraseña ha sido cambiada con exito');
-    }else{
-        $this->setMessage('Error al cambiar la contraseña');
     }
-}}
 
 }

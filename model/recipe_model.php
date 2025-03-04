@@ -49,49 +49,36 @@ class Recipe
     {
         return $this->createdAt;
     }
-
-
     public function setIdRecipe(int $id_recipe): self
     {
         $this->id_recipe = $id_recipe;
         return $this;
     }
-
-
     public function setTitle(string $title): self
     {
         $this->title = $title;
         return $this;
     }
-
-
     public function setCategory(string $category): self
     {
         $this->category = $category;
         return $this;
     }
-
-
     public function setDifficulty(int $difficulty): self
     {
         $this->difficulty = $difficulty;
         return $this;
     }
-
-
     public function setCookingTime(int $cookingTime): self
     {
         $this->cookingTime = $cookingTime;
         return $this;
     }
-
-
     public function setMainPhoto(string $mainPhoto): self
     {
         $this->mainPhoto = $mainPhoto;
         return $this;
     }
-
     public function setCreatedAt(string $createdAt): self
     {
         $this->createdAt = $createdAt;

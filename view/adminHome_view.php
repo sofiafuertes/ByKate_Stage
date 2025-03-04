@@ -7,8 +7,8 @@
             <li>
                 <label for="product" class="title">Productos</label>
                 <button id="btnPhotoGallery">Galería de Fotos </button>
-                <!-- <button id="btnProductList">Ver lista de productos</button>
-                <button id="btnNewProduct">Agregar nuevo producto</button> -->
+                <button id="btnProductList">Ver lista de productos</button>
+                <button id="btnNewProduct">Agregar nuevo producto</button> 
             </li>
             <input type="radio" name="menu" id="recipe">
             <li>
@@ -208,7 +208,7 @@
                 </div>
                 <button type="button" id="addTipBtn">Agregar consejo</button>
 
-                <button type="submit" name="submitRecipe">Agregar receta</button>
+                <button type="submit" name="submitRecipe" class="addRecipe">Agregar receta</button>
             </form>
         </div>
 

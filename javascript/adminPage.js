@@ -29,51 +29,51 @@ document.addEventListener("DOMContentLoaded", () => {
     //     });
     // }
 
-    // // Show/hide product list
-    // const showListProducts = document.getElementById("btnProductList");
-    // const listProducts = document.getElementById("productsList");
+    // Show/hide product list
+    const showListProducts = document.getElementById("btnProductList");
+    const listProducts = document.getElementById("productsList");
 
-    // if (showListProducts && listProducts) {
-    //     showListProducts.addEventListener("click", (e) => {
-    //         e.preventDefault();
-    //         listProducts.style.display =
-    //             listProducts.style.display === "none" ||
-    //             listProducts.style.display === ""
-    //                 ? "block"
-    //                 : "none";
-    //     });
-    // }
+    if (showListProducts && listProducts) {
+        showListProducts.addEventListener("click", (e) => {
+            e.preventDefault();
+            listProducts.style.display =
+                listProducts.style.display === "none" ||
+                listProducts.style.display === ""
+                    ? "block"
+                    : "none";
+        });
+    }
 
-    // // Show form to modify product
-    // const modifyLinks = document.querySelectorAll(".modify-link");
-    // const cancelButtons = document.querySelectorAll(".cancel-button");
+    // Show form to modify product
+    const modifyLinks = document.querySelectorAll(".modify-link");
+    const cancelButtons = document.querySelectorAll(".cancel-button");
 
-    // if (modifyLinks.length > 0) {
-    //     modifyLinks.forEach((link) => {
-    //         link.addEventListener("click", (event) => {
-    //             event.preventDefault();
-    //             const id = link.getAttribute("data-id");
-    //             const formRow = document.getElementById(`edit-form-${id}`);
-    //             if (formRow) {
-    //                 formRow.style.display =
-    //                     formRow.style.display === "none" ? "table-row" : "none";
-    //             }
-    //         });
-    //     });
-    // }
+    if (modifyLinks.length > 0) {
+        modifyLinks.forEach((link) => {
+            link.addEventListener("click", (event) => {
+                event.preventDefault();
+                const id = link.getAttribute("data-id");
+                const formRow = document.getElementById(`edit-form-${id}`);
+                if (formRow) {
+                    formRow.style.display =
+                        formRow.style.display === "none" ? "table-row" : "none";
+                }
+            });
+        });
+    }
 
-    // // Hide the edit form
-    // if (cancelButtons.length > 0) {
-    //     cancelButtons.forEach((button) => {
-    //         button.addEventListener("click", () => {
-    //             const id = button.getAttribute("data-id");
-    //             const formRow = document.getElementById(`edit-form-${id}`);
-    //             if (formRow) {
-    //                 formRow.style.display = "none";
-    //             }
-    //         });
-    //     });
-    // }
+    // Hide the edit form
+    if (cancelButtons.length > 0) {
+        cancelButtons.forEach((button) => {
+            button.addEventListener("click", () => {
+                const id = button.getAttribute("data-id");
+                const formRow = document.getElementById(`edit-form-${id}`);
+                if (formRow) {
+                    formRow.style.display = "none";
+                }
+            });
+        });
+    }
 
     // Show/hide "Change Password" form
     const showPswForm = document.getElementById("btnPassword");

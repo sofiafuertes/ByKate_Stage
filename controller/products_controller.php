@@ -177,11 +177,12 @@ class ProductsControler
             $result = $this->products->updateProduct($product);
 
             if ($result) {
-                // Redirige a la página de gestión con un mensaje de éxito
+                // echo "Producto actualizado con éxito.";
+                // If ok, redirect to the gestion page
                 header('Location: /ByKate_Stage/gestion?message=Producto actualizado');
                 exit;
             } else {
-                // Muestra un mensaje de error
+                // If error, display error message
                 echo "Error al actualizar el producto.";
             }
         } else {

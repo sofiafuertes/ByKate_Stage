@@ -120,9 +120,9 @@ switch ($path) {
 
     case $path === "/ByKate_Stage/gestion":
         include './utils/functions.php';
-        // include './model/product_model.php';
-        // include './manager/product_manager.php';
-        // include './controller/products_controller.php';
+        include './model/product_model.php';
+        include './manager/product_manager.php';
+        include './controller/products_controller.php';
         include './model/textesWeb_model.php';
         include './model/recipe_model.php';
         include './manager/recipe_manager.php';
@@ -140,8 +140,8 @@ switch ($path) {
         // $addingProduct = new ProductsControler();
         // $addingProduct->addProduct();
 
-        // $controller = new ProductsControler();
-        // $products = $controller->displayProducts();
+        $controller = new ProductsControler();
+        $products = $controller->displayProducts();
 
         $loginController = new Login_controler();
         $loginController->changePassword();

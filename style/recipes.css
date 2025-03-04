@@ -170,7 +170,7 @@ h2{
 }
 
 .recipeSteps{
-    grid-column: 2/-1;
+    grid-column: 2/8;
     li{
         font-family: 'Work-Sans';
         padding-bottom: 20px;
@@ -179,7 +179,7 @@ h2{
 }
 
 .recipeTips{
-    grid-column: 2/-1;
+    grid-column: 2/8;
     li{
         font-family: 'Work-Sans';
         padding-bottom: 20px;
